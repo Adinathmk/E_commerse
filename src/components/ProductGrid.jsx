@@ -4,7 +4,6 @@ import ProductCard from "./ProductCard";
 
 export default function ProductGrid({ products }) {
   
-  // If no products
   if (!products || products.length === 0) {
     return (
       <p className="text-center text-gray-500 py-10">
