@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../contexts/authContext"; // Use AuthContext hook
+import { useAuth } from "../contexts/AuthContext"; // Use AuthContext hook
 
 const SignUpPage = () => {
   const navigate = useNavigate();

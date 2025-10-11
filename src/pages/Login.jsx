@@ -1,6 +1,6 @@
 import React, {useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {useAuth } from "../contexts/authContext"; // import your AuthContext
+import {useAuth } from "../contexts/AuthContext"; // import your AuthContext
 
 const SignInPage = () => {
   const navigate = useNavigate();
