@@ -4,12 +4,116 @@
       "id": "u1",
       "name": "Adinath",
       "email": "adinathmkclt@gmail.com",
-      "password": "123456789"
+      "password": "123456789",
+      "cart": [
+        {
+          "id": "1",
+          "name": "Men's Performance T-Shirt",
+          "description": "Lightweight and breathable workout t-shirt designed for high-intensity training.",
+          "price": 799.99,
+          "count": 50,
+          "category": "Tops",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
+          ],
+          "is_active": true,
+          "created_at": "2025-10-11T09:30:00Z",
+          "isNewArrival": true,
+          "isTopSelling": false,
+          "type": "tshirt",
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ],
+          "categoryType": "male",
+          "quantity": 22,
+          "addedAt": "2025-10-13T11:06:35.437Z"
+        }
+      ],
+      "wishlist": [
+        {
+          "id": "1",
+          "name": "Men's Performance T-Shirt",
+          "description": "Lightweight and breathable workout t-shirt designed for high-intensity training.",
+          "price": 799.99,
+          "count": 50,
+          "category": "Tops",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
+          ],
+          "is_active": true,
+          "created_at": "2025-10-11T09:30:00Z",
+          "isNewArrival": true,
+          "isTopSelling": false,
+          "type": "tshirt",
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ],
+          "categoryType": "male"
+        },
+        {
+          "id": "3",
+          "name": "Men's Gym Shorts",
+          "description": "Quick-drying and flexible gym shorts with zip pockets for secure storage.",
+          "price": 999.99,
+          "count": 40,
+          "category": "Bottoms",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
+          ],
+          "is_active": true,
+          "created_at": "2025-10-11T09:32:00Z",
+          "isNewArrival": false,
+          "isTopSelling": true,
+          "type": "shorts",
+          "sizes": [
+            "M",
+            "L",
+            "XL"
+          ],
+          "categoryType": "male"
+        },
+        {
+          "id": "12",
+          "name": "Men's Training Gloves",
+          "description": "Durable, non-slip gloves for secure grip during strength training.",
+          "price": 699.99,
+          "count": 70,
+          "category": "Accessories",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
+          ],
+          "is_active": true,
+          "created_at": "2025-10-11T09:41:00Z",
+          "isNewArrival": false,
+          "isTopSelling": false,
+          "type": "gloves",
+          "sizes": [
+            "M",
+            "L"
+          ],
+          "categoryType": "male"
+        }
+      ]
+    },
+    {
+      "id": "08b0",
+      "name": "Adhi",
+      "email": "adi@gmail.com",
+      "password": "123456789",
+      "role": "user",
+      "cart": [],
+      "wishlist": []
     }
   ],
   "products": [
-  {
-     "id": 1,
+    {
+      "id": "1",
       "name": "Men's Performance T-Shirt",
       "description": "Lightweight and breathable workout t-shirt designed for high-intensity training.",
       "price": 799.99,
@@ -23,11 +127,16 @@
       "isNewArrival": true,
       "isTopSelling": false,
       "type": "tshirt",
-      "sizes": ["S", "M", "L", "XL"],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "categoryType": "male"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Women's Yoga Tank Top",
       "description": "Soft, stretchable, and moisture-wicking tank top for maximum comfort during yoga.",
       "price": 899.99,
@@ -41,11 +150,15 @@
       "isNewArrival": true,
       "isTopSelling": true,
       "type": "tanktop",
-      "sizes": ["S", "M", "L"],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
       "categoryType": "female"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Men's Gym Shorts",
       "description": "Quick-drying and flexible gym shorts with zip pockets for secure storage.",
       "price": 999.99,
@@ -59,11 +172,15 @@
       "isNewArrival": false,
       "isTopSelling": true,
       "type": "shorts",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "categoryType": "male"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Women's Training Leggings",
       "description": "High-waisted leggings with compression support for performance and comfort.",
       "price": 1299.99,
@@ -77,11 +194,16 @@
       "isNewArrival": false,
       "isTopSelling": true,
       "type": "leggings",
-      "sizes": ["S", "M", "L", "XL"],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "categoryType": "female"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Unisex Gym Hoodie",
       "description": "Comfortable and stylish hoodie with thermal fabric for warmups or casual wear.",
       "price": 1499.99,
@@ -95,11 +217,16 @@
       "isNewArrival": false,
       "isTopSelling": false,
       "type": "hoodie",
-      "sizes": ["S", "M", "L", "XL"],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "categoryType": "unisex"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Men's Compression Tights",
       "description": "Compression fit for muscle support and improved circulation during workouts.",
       "price": 1199.99,
@@ -113,11 +240,15 @@
       "isNewArrival": false,
       "isTopSelling": false,
       "type": "tights",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "categoryType": "male"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Women's Sports Bra",
       "description": "Supportive sports bra with sweat-wicking technology for high-impact training.",
       "price": 999.99,
@@ -131,11 +262,15 @@
       "isNewArrival": true,
       "isTopSelling": true,
       "type": "sportsbra",
-      "sizes": ["S", "M", "L"],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
       "categoryType": "female"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Unisex Sweatpants",
       "description": "Relaxed-fit sweatpants for post-gym comfort or casual lounging.",
       "price": 1099.99,
@@ -149,11 +284,16 @@
       "isNewArrival": false,
       "isTopSelling": false,
       "type": "sweatpants",
-      "sizes": ["S", "M", "L", "XL"],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "categoryType": "unisex"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Men's Running Jacket",
       "description": "Lightweight, wind-resistant running jacket with reflective details for safety.",
       "price": 1799.99,
@@ -167,11 +307,15 @@
       "isNewArrival": false,
       "isTopSelling": true,
       "type": "jacket",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "categoryType": "male"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Women's Cropped Hoodie",
       "description": "Trendy cropped hoodie with fleece lining for cozy pre- and post-workout wear.",
       "price": 1399.99,
@@ -185,11 +329,15 @@
       "isNewArrival": true,
       "isTopSelling": false,
       "type": "hoodie",
-      "sizes": ["S", "M", "L"],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
       "categoryType": "female"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Unisex Training Cap",
       "description": "Breathable and adjustable training cap for all-day comfort.",
       "price": 499.99,
@@ -207,7 +355,7 @@
       "categoryType": "unisex"
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Men's Training Gloves",
       "description": "Durable, non-slip gloves for secure grip during strength training.",
       "price": 699.99,
@@ -221,11 +369,14 @@
       "isNewArrival": false,
       "isTopSelling": false,
       "type": "gloves",
-      "sizes": ["M", "L"],
+      "sizes": [
+        "M",
+        "L"
+      ],
       "categoryType": "male"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Women's Headband",
       "description": "Elastic and sweat-absorbing headband to keep hair and sweat out of your way.",
       "price": 299.99,
@@ -243,7 +394,7 @@
       "categoryType": "female"
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Unisex Duffel Bag",
       "description": "Spacious gym bag with multiple compartments and durable straps.",
       "price": 1599.99,
@@ -261,7 +412,7 @@
       "categoryType": "unisex"
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Unisex Gym Socks",
       "description": "Cushioned gym socks with arch support and breathable mesh zones.",
       "price": 399.99,
@@ -275,11 +426,15 @@
       "isNewArrival": false,
       "isTopSelling": false,
       "type": "socks",
-      "sizes": ["S", "M", "L"],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
       "categoryType": "unisex"
     },
-   {
-      "id": 16,
+    {
+      "id": "16",
       "name": "Men's Running Shoes",
       "description": "Lightweight shoes with responsive cushioning for all types of running.",
       "price": 2599.99,
@@ -293,11 +448,17 @@
       "isNewArrival": true,
       "isTopSelling": true,
       "type": "shoes",
-      "sizes": ["7", "8", "9", "10", "11"],
+      "sizes": [
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
       "categoryType": "male"
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Women's Running Shoes",
       "description": "Flexible and breathable shoes for high-performance running and training.",
       "price": 2399.99,
@@ -311,11 +472,17 @@
       "isNewArrival": true,
       "isTopSelling": true,
       "type": "shoes",
-      "sizes": ["5", "6", "7", "8", "9"],
+      "sizes": [
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
       "categoryType": "female"
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Unisex Water Bottle",
       "description": "Durable, BPA-free water bottle perfect for gym and outdoor activities.",
       "price": 499.99,
@@ -333,7 +500,7 @@
       "categoryType": "unisex"
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Men's Sweatband Set",
       "description": "Set of 2 sweatbands for wrist and head, keeps sweat away during workouts.",
       "price": 299.99,
@@ -351,7 +518,7 @@
       "categoryType": "male"
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Women's Fitness Tracker",
       "description": "Smart fitness tracker to monitor heart rate, steps, and calories burned.",
       "price": 4499.99,
@@ -369,7 +536,7 @@
       "categoryType": "female"
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "Unisex Gym Towel",
       "description": "Soft and absorbent towel, perfect for workouts and sports activities.",
       "price": 399.99,
@@ -387,7 +554,7 @@
       "categoryType": "unisex"
     },
     {
-      "id": 22,
+      "id": "22",
       "name": "Men's Compression Socks",
       "description": "Breathable compression socks for improved circulation during workouts.",
       "price": 599.99,
@@ -401,11 +568,14 @@
       "isNewArrival": false,
       "isTopSelling": true,
       "type": "socks",
-      "sizes": ["M", "L"],
+      "sizes": [
+        "M",
+        "L"
+      ],
       "categoryType": "male"
     },
     {
-      "id": 23,
+      "id": "23",
       "name": "Women's Training Shorts",
       "description": "Lightweight and flexible shorts designed for gym and outdoor workouts.",
       "price": 799.99,
@@ -419,11 +589,15 @@
       "isNewArrival": true,
       "isTopSelling": true,
       "type": "shorts",
-      "sizes": ["S", "M", "L"],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
       "categoryType": "female"
     },
     {
-      "id": 24,
+      "id": "24",
       "name": "Men's Hoodie Jacket",
       "description": "Warm hoodie jacket suitable for jogging and casual wear.",
       "price": 1599.99,
@@ -437,11 +611,15 @@
       "isNewArrival": true,
       "isTopSelling": true,
       "type": "hoodie",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "categoryType": "male"
     },
     {
-      "id": 25,
+      "id": "25",
       "name": "Women's Workout Tank",
       "description": "Breathable tank top for gym or yoga sessions with moisture-wicking fabric.",
       "price": 699.99,
@@ -455,11 +633,15 @@
       "isNewArrival": true,
       "isTopSelling": false,
       "type": "tanktop",
-      "sizes": ["S", "M", "L"],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
       "categoryType": "female"
     },
     {
-      "id": 26,
+      "id": "26",
       "name": "Unisex Sports Cap",
       "description": "Adjustable sports cap for men and women to protect from sun during outdoor activities.",
       "price": 499.99,
@@ -477,7 +659,7 @@
       "categoryType": "unisex"
     },
     {
-      "id": 27,
+      "id": "27",
       "name": "Men's Jogger Pants",
       "description": "Slim-fit jogger pants with elastic cuffs for comfort and style during workouts.",
       "price": 1299.99,
@@ -491,11 +673,15 @@
       "isNewArrival": false,
       "isTopSelling": true,
       "type": "joggers",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "categoryType": "accessories"
     },
     {
-      "id": 28,
+      "id": "28",
       "name": "Women's Sports Tank Top",
       "description": "Lightweight, stretchy tank top designed for high-intensity workouts and yoga.",
       "price": 799.99,
@@ -509,11 +695,15 @@
       "isNewArrival": true,
       "isTopSelling": true,
       "type": "tanktop",
-      "sizes": ["S", "M", "L"],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
       "categoryType": "accessories"
     },
     {
-      "id": 29,
+      "id": "29",
       "name": "Unisex Gym Duffel",
       "description": "Stylish duffel bag with multiple compartments for gym, travel, and outdoor use.",
       "price": 1799.99,
@@ -531,7 +721,7 @@
       "categoryType": "accessories"
     },
     {
-      "id": 30,
+      "id": "30",
       "name": "Women's Gym Gloves",
       "description": "Protective gloves for weightlifting and strength training with grip support.",
       "price": 599.99,
@@ -545,7 +735,11 @@
       "isNewArrival": true,
       "isTopSelling": false,
       "type": "gloves",
-      "sizes": ["S", "M", "L"],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
       "categoryType": "accessories"
     }
   ]

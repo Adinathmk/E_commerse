@@ -1,6 +1,6 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {useAuth } from "../contexts/AuthContext"; // import your AuthContext
+import { useAuth } from "../contexts/AuthContext"; // import your AuthContext
 
 const SignInPage = () => {
   const navigate = useNavigate();
@@ -66,7 +66,7 @@ const SignInPage = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-xl bg-gray-50 border ${errors.email ? "border-red-500" : "border-gray-200"} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  className={`w-full px-4 py-3 rounded-xl bg-gray-50 border transition-all duration-200 ${errors.email ? "border-red-500" : "border-gray-200"} focus:outline-none focus:ring-2 focus:ring-blue-500`}
                   placeholder="you@example.com"
                 />
                 {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
@@ -79,7 +79,7 @@ const SignInPage = () => {
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-xl bg-gray-50 border ${errors.password ? "border-red-500" : "border-gray-200"} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  className={`w-full px-4 py-3 rounded-xl bg-gray-50 border transition-all duration-200 ${errors.password ? "border-red-500" : "border-gray-200"} focus:outline-none focus:ring-2 focus:ring-blue-500`}
                   placeholder="Enter your password"
                 />
                 {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
@@ -96,7 +96,7 @@ const SignInPage = () => {
 
             <div className="text-center mt-6">
               <p className="text-gray-600">
-                Don’t have an account?{" "}
+                Don't have an account?{" "}
                 <button
                   className="text-blue-600 font-semibold hover:cursor-pointer"
                   onClick={() => navigate("/signup")}

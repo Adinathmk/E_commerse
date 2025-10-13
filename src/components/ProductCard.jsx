@@ -1,11 +1,64 @@
-import { Heart, ShoppingBag } from "lucide-react";
+// src/components/ProductCard.jsx
+import { Heart, ShoppingBag, Check } from "lucide-react";
+import { useWishlist } from "../contexts/WishlistContext";
+import { useCart } from "../contexts/CartContext";
 
 export default function ProductCard({ product }) {
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  const { handleAddToCart, getCartItem, isInCart } = useCart();
+  
+  const isWishlisted = isInWishlist(product.id);
+  const cartItem = getCartItem(product.id);
+  const isInCartItem = isInCart(product.id);
+  const itemCount = cartItem?.quantity || 0;
+
+  const handleWishlistClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (isWishlisted) {
+      removeFromWishlist(product.id);
+    } else {
+      addToWishlist(product);
+    }
+  };
+
+  const handleCartClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    handleAddToCart(product);
+  };
+
+  const getButtonText = () => {
+    if (!isInCartItem) {
+      return "Add to Cart";
+    }
+    return itemCount === 1 ? "Added to Cart" : `${itemCount} in Cart`;
+  };
+
+  const getButtonIcon = () => {
+    if (!isInCartItem) {
+      return <ShoppingBag className="w-4 h-4" />;
+    }
+    return itemCount === 1 ? <Check className="w-4 h-4" /> : <ShoppingBag className="w-4 h-4" />;
+  };
+
   return (
     <div className="group relative bg-white overflow-hidden hover:bg-gray-100 hover:shadow-lg transition-all duration-300">
       {/* Wishlist Button */}
-      <button className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <Heart className="w-5 h-5 text-gray-800 hover:fill-gray-800 transition" />
+      <button 
+        onClick={handleWishlistClick}
+        className={`absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+          isWishlisted ? 'opacity-100' : ''
+        }`}
+      >
+        <Heart 
+          className={`w-5 h-5 transition ${
+            isWishlisted 
+              ? 'fill-red-500 text-red-500' 
+              : 'text-gray-800 hover:fill-gray-800'
+          }`} 
+        />
       </button>
 
       {/* Product Image */}
@@ -43,9 +96,18 @@ export default function ProductCard({ product }) {
 
         {/* Hover Add to Cart */}
         <div className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-          <button className="w-full bg-black/90 backdrop-blur-sm text-white py-4 flex items-center justify-center gap-2 hover:bg-black transition-colors">
-            <ShoppingBag className="w-4 h-4" />
-            <span className="text-sm tracking-wide font-light">Add to Cart</span>
+          <button 
+            onClick={handleCartClick}
+            className={`w-full backdrop-blur-sm py-4 flex items-center justify-center gap-2 transition-colors ${
+              isInCartItem
+                ? 'bg-green-600 text-white hover:bg-green-700'
+                : 'bg-black/90 text-white hover:bg-black'
+            }`}
+          >
+            {getButtonIcon()}
+            <span className="text-sm tracking-wide font-light">
+              {getButtonText()}
+            </span>
           </button>
         </div>
       </div>

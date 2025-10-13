@@ -53,7 +53,9 @@ const SignUpPage = () => {
       name: formData.name,
       email: formData.email,
       password: formData.password,
-      role:'user'
+      role:'user',
+      cart:[],
+      wishlist:[]
     });
     setLoading(false);
 
@@ -82,7 +84,7 @@ const SignUpPage = () => {
             placeholder="Full Name"
             value={formData.name}
             onChange={handleChange}
-            className={`w-full px-4 py-3 rounded-xl bg-gray-50 border ${
+            className={`w-full px-4 py-3 rounded-xl bg-gray-50 border transition-all duration-200 ${
               submitted && errors.name ? "border-red-500" : "border-gray-200"
             } focus:outline-none focus:ring-2 focus:ring-blue-500`}
           />
@@ -94,7 +96,7 @@ const SignUpPage = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className={`w-full px-4 py-3 rounded-xl bg-gray-50 border ${
+            className={`w-full px-4 py-3 rounded-xl bg-gray-50 border transition-all duration-200 ${
               submitted && errors.email ? "border-red-500" : "border-gray-200"
             } focus:outline-none focus:ring-2 focus:ring-blue-500`}
           />
@@ -106,7 +108,7 @@ const SignUpPage = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            className={`w-full px-4 py-3 rounded-xl bg-gray-50 border ${
+            className={`w-full px-4 py-3 rounded-xl bg-gray-50 border transition-all duration-200 ${
               submitted && errors.password ? "border-red-500" : "border-gray-200"
             } focus:outline-none focus:ring-2 focus:ring-blue-500`}
           />
@@ -120,7 +122,7 @@ const SignUpPage = () => {
             placeholder="Confirm Password"
             value={formData.confirmPassword}
             onChange={handleChange}
-            className={`w-full px-4 py-3 rounded-xl bg-gray-50 border ${
+            className={`w-full px-4 py-3 rounded-xl bg-gray-50 border transition-all duration-200 ${
               submitted && errors.confirmPassword ? "border-red-500" : "border-gray-200"
             } focus:outline-none focus:ring-2 focus:ring-blue-500`}
           />

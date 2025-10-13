@@ -107,7 +107,7 @@ export default function ProductFilter({ products = [], onFilter = () => {}, onSo
             <div className="flex-1">
               <label className="block text-xs text-gray-500 mb-1 font-medium">Min</label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">$</span>
+                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">₹</span>
                 <input
                   type="number"
                   min="0"
@@ -122,7 +122,7 @@ export default function ProductFilter({ products = [], onFilter = () => {}, onSo
             <div className="flex-1">
               <label className="block text-xs text-gray-500 mb-1 font-medium">Max</label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">$</span>
+                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">₹</span>
                 <input
                   type="number"
                   min={priceRange[0]}
