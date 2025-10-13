@@ -1,8 +1,11 @@
 import { Search, Heart, ShoppingCart, User, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useCart } from '../contexts/CartContext';
 
 export default function Navbar() {
+  const{getCartCount}=useCart()
+  console.log({getCartCount})
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navigate = useNavigate(); // ✅ correct hook for navigation
@@ -83,7 +86,7 @@ export default function Navbar() {
               >
                 <Heart size={22} className="group-hover:scale-110 transition-transform" />
                 <span className="absolute -top-1 -right-1 bg-gradient-to-br from-pink-500 to-rose-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow-lg shadow-pink-500/40 ring-2 ring-white">
-                  5
+                  1
                 </span>
               </button>
 
@@ -121,7 +124,7 @@ export default function Navbar() {
               <button className="text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" aria-label="Cart">
                 <ShoppingCart size={22} className="group-hover:scale-110 transition-transform" />
                 <span className="absolute -top-1 -right-1 bg-gradient-to-br from-purple-500 to-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow-lg shadow-purple-500/40 ring-2 ring-white">
-                  3
+                  
                 </span>
               </button>
               <button className="flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-all duration-300 px-3 py-2 hover:bg-purple-50 rounded-lg group" aria-label="Profile">

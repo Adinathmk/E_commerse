@@ -125,7 +125,7 @@ export default function ProductCard({ product }) {
             ₹{product.price.toLocaleString()}
           </span>
           <span className="text-xs text-gray-400 font-light capitalize">
-            {product.category}
+            {product.type}
           </span>
         </div>
       </div>
