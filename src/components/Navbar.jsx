@@ -2,10 +2,11 @@ import { Search, Heart, ShoppingCart, User, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useCart } from '../contexts/CartContext';
+import { useWishlist } from '../contexts/WishlistContext';
 
 export default function Navbar() {
   const{getCartCount}=useCart()
-  console.log({getCartCount})
+  const{wishlistCount}=useWishlist()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navigate = useNavigate(); // ✅ correct hook for navigation
@@ -68,7 +69,7 @@ export default function Navbar() {
                 {isSearchOpen && (
                   <button
                     onClick={() => setIsSearchOpen(false)}
-                    className="ml-2 text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-full hover:bg-gray-200 flex-shrink-0"
+                    className=" ml-2 text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-full hover:bg-gray-200 flex-shrink-0"
                   >
                     <X size={18} />
                   </button>
@@ -81,31 +82,31 @@ export default function Navbar() {
               {/* ✅ Navigate to wishlist */}
               <button  
                 onClick={() => navigate('/wishlist')} 
-                className="text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" 
+                className="cursor-pointer text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" 
                 aria-label="Wishlist"
               >
                 <Heart size={22} className="group-hover:scale-110 transition-transform" />
                 <span className="absolute -top-1 -right-1 bg-gradient-to-br from-pink-500 to-rose-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow-lg shadow-pink-500/40 ring-2 ring-white">
-                  1
+                  {wishlistCount}
                 </span>
               </button>
 
               {/* ✅ Navigate to cart */}
               <button 
                 onClick={() => navigate('/cart')}
-                className="text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" 
+                className="cursor-pointer text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" 
                 aria-label="Cart"
               >
                 <ShoppingCart size={22} className="group-hover:scale-110 transition-transform" />
                 <span className="absolute -top-1 -right-1 bg-gradient-to-br from-purple-500 to-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow-lg shadow-purple-500/40 ring-2 ring-white">
-                  3
+                 {getCartCount()}
                 </span>
               </button>
 
               {/* Profile */}
               <button 
                 onClick={() => navigate('/account')}
-                className="flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-all duration-300 px-3 py-2 hover:bg-purple-50 rounded-lg group" 
+                className="cursor-pointer flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-all duration-300 px-3 py-2 hover:bg-purple-50 rounded-lg group" 
                 aria-label="Profile"
               >
                 <User size={20} className="group-hover:scale-110 transition-transform" />
@@ -115,19 +116,19 @@ export default function Navbar() {
 
             {/* Mobile Icons */}
             <div className="flex lg:hidden items-center space-x-2">
-              <button className="text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" aria-label="Wishlist">
+              <button className="cursor-pointer text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" aria-label="Wishlist">
                 <Heart size={22} className="group-hover:scale-110 transition-transform" />
                 <span className="absolute -top-1 -right-1 bg-gradient-to-br from-pink-500 to-rose-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow-lg shadow-pink-500/40 ring-2 ring-white">
-                  5
+                  {wishlistCount}
                 </span>
               </button>
-              <button className="text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" aria-label="Cart">
+              <button className="cursor-pointer text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" aria-label="Cart">
                 <ShoppingCart size={22} className="group-hover:scale-110 transition-transform" />
                 <span className="absolute -top-1 -right-1 bg-gradient-to-br from-purple-500 to-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow-lg shadow-purple-500/40 ring-2 ring-white">
-                  
+                  {getCartCount()}                
                 </span>
               </button>
-              <button className="flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-all duration-300 px-3 py-2 hover:bg-purple-50 rounded-lg group" aria-label="Profile">
+              <button className="cursor-pointer flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-all duration-300 px-3 py-2 hover:bg-purple-50 rounded-lg group" aria-label="Profile">
                 <User size={22} className="group-hover:scale-110 transition-transform" />
               </button>
             </div>
@@ -135,7 +136,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg"
+              className="cursor-pointer lg:hidden text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -154,7 +155,7 @@ export default function Navbar() {
             </Link>               
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="text-gray-600 hover:text-gray-800 transition-colors p-2"
+              className="cursor-pointer text-gray-600 hover:text-gray-800 transition-colors p-2"
             >
               <X size={28} />
             </button>

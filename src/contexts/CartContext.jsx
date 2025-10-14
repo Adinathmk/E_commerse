@@ -137,8 +137,14 @@ export const CartProvider = ({ children }) => {
   // --------------------------
   const isInCart = (productId) => cart.some(item => item.id === productId);
   const getCartItem = (productId) => cart.find(item => item.id === productId);
-  const getCartCount = () => {return(cart.reduce((total, item) => total + item.quantity, 0))};
+  const getCartCount = () => cart.reduce((total, item) => total + item.quantity, 0);
   const getCartTotal = () => cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  
+  // NEW: Function to get quantity of a specific item in cart
+  const getCartItemCount = (productId) => {
+    const item = cart.find(item => item.id === productId);
+    return item ? item.quantity : 0;
+  };
 
   const handleAddToCart = (product) => addToCart(product, 1);
   const refreshCart = () => currentUser && fetchCart(currentUser.id);
@@ -157,8 +163,9 @@ export const CartProvider = ({ children }) => {
     getCartItem,
     getCartCount,
     getCartTotal,
+    getCartItemCount, // Added missing function
     handleAddToCart,
-    refreshCart
+    refreshCart,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

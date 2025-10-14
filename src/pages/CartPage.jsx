@@ -1,8 +1,10 @@
 // src/components/CartPage.jsx
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 import { Minus, Plus, Trash2, ShoppingBag, ArrowRight } from 'lucide-react';
 
 export default function CartPage() {
+  const navigate = useNavigate()
   const { 
     cart, 
     updateQuantity, 
@@ -22,15 +24,18 @@ export default function CartPage() {
 
   if (cart.length === 0) {
     return (
-      <div className="max-w-md mx-auto text-center py-16 px-4">
+      <div className="max-w-md mx-auto text-center py-50 px-4">
         <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <ShoppingBag className="w-10 h-10 text-gray-400" />
         </div>
         <h2 className="text-2xl font-semibold text-gray-900 mb-2">Your cart is empty</h2>
         <p className="text-gray-500 mb-8">Looks like you haven't added anything to your cart yet.</p>
-        <button className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium">
+        <Link
+          to="/men"
+          className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium inline-block text-center"
+        >
           Continue Shopping
-        </button>
+      </Link>
       </div>
     );
   }
@@ -69,7 +74,9 @@ export default function CartPage() {
                   <img
                     src={item.images?.[0]}
                     alt={item.name}
-                    className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                    className="w-20 object-cover rounded-lg flex-shrink-0 cursor-pointer"
+                    onClick={() => navigate(`/product/${item.id}`)}
+
                   />
                   
                   <div className="flex-1 min-w-0">
@@ -126,7 +133,7 @@ export default function CartPage() {
 
         {/* Order Summary */}
         <div className="lg:col-span-1">
-          <div className="bg-white rounded-xl border border-gray-200 p-10 sticky top-70">
+          <div className="bg-white rounded-xl border border-gray-200 p-10 sticky top-[280px]">
             <h2 className="text-xl font-bold mb-6">Order Summary</h2>
             
             <div className="space-y-4 mb-6">

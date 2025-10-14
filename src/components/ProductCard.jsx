@@ -2,8 +2,10 @@
 import { Heart, ShoppingBag, Check } from "lucide-react";
 import { useWishlist } from "../contexts/WishlistContext";
 import { useCart } from "../contexts/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({ product }) {
+  const navigate = useNavigate();
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const { handleAddToCart, getCartItem, isInCart } = useCart();
   
@@ -12,11 +14,15 @@ export default function ProductCard({ product }) {
   const isInCartItem = isInCart(product.id);
   const itemCount = cartItem?.quantity || 0;
 
+  const handleCardClick = () => {
+    navigate(`/product/${product.id}`);
+  };
+
   const handleWishlistClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
     
-    if (isWishlisted) {
+    if (isWishlisted) { 
       removeFromWishlist(product.id);
     } else {
       addToWishlist(product);
@@ -44,7 +50,10 @@ export default function ProductCard({ product }) {
   };
 
   return (
-    <div className="group relative bg-white overflow-hidden hover:bg-gray-100 hover:shadow-lg transition-all duration-300">
+    <div 
+      className="group relative bg-white overflow-hidden hover:bg-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer"
+      onClick={handleCardClick}
+    >
       {/* Wishlist Button */}
       <button 
         onClick={handleWishlistClick}
