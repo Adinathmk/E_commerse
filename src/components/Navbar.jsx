@@ -1,18 +1,95 @@
-import { Search, Heart, ShoppingCart, User, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { Search, Heart, ShoppingCart, User, Menu, X, LogOut, Package, User as UserIcon, LogIn } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useCart } from '../contexts/CartContext';
 import { useWishlist } from '../contexts/WishlistContext';
+import { useAuth } from '../contexts/AuthContext'; // Import the auth context
+import { toast } from 'react-toastify';
 
 export default function Navbar() {
-  const{getCartCount}=useCart()
-  const{wishlistCount}=useWishlist()
+  const { getCartCount } = useCart();
+  const { wishlistCount } = useWishlist();
+  const { currentUser, logoutUser } = useAuth(); // Use auth context
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const navigate = useNavigate(); // ✅ correct hook for navigation
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const navigate = useNavigate();
+  const profileModalRef = useRef(null);
 
   const activeClass = "text-purple-600 font-medium";
   const inactiveClass = "text-gray-700 font-medium";
+
+  // Close modal when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (profileModalRef.current && !profileModalRef.current.contains(event.target)) {
+        setIsProfileModalOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleSignOut = () => {
+    logoutUser(); // Use the logout function from auth context
+    setIsProfileModalOpen(false);
+    toast.success('Signed out successfully!');
+  };
+
+  const handleProfileClick = () => {
+    if (!currentUser) {
+      // If not logged in, navigate to login page
+      navigate('/login');
+    } else {
+      // If logged in, toggle profile modal
+      setIsProfileModalOpen(!isProfileModalOpen);
+    }
+  };
+
+  const handleMyOrders = () => {
+    setIsProfileModalOpen(false);
+    navigate('/orders');
+  };
+
+  const handleProfile = () => {
+    setIsProfileModalOpen(false);
+    navigate('/profile');
+  };
+
+  const handleLogin = () => {
+    navigate('/login');
+  };
+
+  // Format user name for display
+  const getUserDisplayName = () => {
+    if (!currentUser) return 'User';
+    
+    if (currentUser.name) {
+      return currentUser.name;
+    } else if (currentUser.firstName && currentUser.lastName) {
+      return `${currentUser.firstName} ${currentUser.lastName}`;
+    } else if (currentUser.email) {
+      return currentUser.email.split('@')[0];
+    }
+    
+    return 'User';
+  };
+
+  // Get user initials for avatar
+  const getUserInitials = () => {
+    if (!currentUser) return 'U';
+    
+    const name = getUserDisplayName();
+    return name
+      .split(' ')
+      .map(part => part.charAt(0))
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+  };
 
   return (
     <nav className="bg-white sticky top-0 z-50 shadow-md border-b border-gray-100">
@@ -79,7 +156,7 @@ export default function Navbar() {
 
             {/* Desktop Icons */}
             <div className="hidden lg:flex items-center space-x-2">
-              {/* ✅ Navigate to wishlist */}
+              {/* Wishlist */}
               <button  
                 onClick={() => navigate('/wishlist')} 
                 className="cursor-pointer text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" 
@@ -91,7 +168,7 @@ export default function Navbar() {
                 </span>
               </button>
 
-              {/* ✅ Navigate to cart */}
+              {/* Cart */}
               <button 
                 onClick={() => navigate('/cart')}
                 className="cursor-pointer text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" 
@@ -103,34 +180,110 @@ export default function Navbar() {
                 </span>
               </button>
 
-              {/* Profile */}
-              <button 
-                onClick={() => navigate('/account')}
-                className="cursor-pointer flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-all duration-300 px-3 py-2 hover:bg-purple-50 rounded-lg group" 
-                aria-label="Profile"
-              >
-                <User size={20} className="group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium hidden xl:block">Account</span>
-              </button>
+              {/* Profile/Login with Modal */}
+              <div className="relative" ref={profileModalRef}>
+                {currentUser ? (
+                  // Logged In State - Show Account with Dropdown
+                  <>
+                    <button 
+                      onClick={handleProfileClick}
+                      className="cursor-pointer flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-all duration-300 px-3 py-2 hover:bg-purple-50 rounded-lg group" 
+                      aria-label="Account"
+                    >
+                      <User size={20} className="group-hover:scale-110 transition-transform" />
+                      <span className="text-sm font-medium hidden xl:block">Account</span>
+                    </button>
+
+                    {/* Profile Modal */}
+                    {isProfileModalOpen && (
+                      <div className="absolute right-0 top-full mt-2 w-80 bg-white rounded-xl shadow-lg border border-gray-200 py-3 z-50 animate-in slide-in-from-top-2 duration-200">
+                        {/* User Welcome Section */}
+                        <div className="px-4 py-3 border-b border-gray-100">
+                          <div className="flex items-center space-x-3">
+                            <div className="flex-shrink-0">
+                              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                                {getUserInitials()}
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <p className="text-sm font-semibold text-gray-900 truncate">
+                                Hello, {getUserDisplayName()}!
+                              </p>
+                              <p className="text-xs text-gray-500 truncate mt-1">
+                                Welcome to GYM SHARK
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Menu Options */}
+                        <div className="py-2">
+                          <button
+                            onClick={handleProfile}
+                            className="w-full flex items-center space-x-3 px-4 py-3 text-left text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200"
+                          >
+                            <UserIcon size={18} className="text-gray-500" />
+                            <span className="font-medium">Profile</span>
+                          </button>
+                          
+                          <button
+                            onClick={handleMyOrders}
+                            className="w-full flex items-center space-x-3 px-4 py-3 text-left text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200"
+                          >
+                            <Package size={18} className="text-gray-500" />
+                            <span className="font-medium">My Orders</span>
+                          </button>
+                          
+                          <div className="border-t border-gray-100 my-1"></div>
+                          
+                          <button
+                            onClick={handleSignOut}
+                            className="w-full flex items-center space-x-3 px-4 py-3 text-left text-red-600 hover:bg-red-50 transition-colors duration-200"
+                          >
+                            <LogOut size={18} />
+                            <span className="font-medium">Sign Out</span>
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  // Not Logged In State - Show Login Button
+                  <button 
+                    onClick={handleLogin}
+                    className="cursor-pointer flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-all duration-300 px-3 py-2 hover:bg-purple-50 rounded-lg group" 
+                    aria-label="Login"
+                  >
+                    <LogIn size={20} className="group-hover:scale-110 transition-transform" />
+                    <span className="text-sm font-medium hidden xl:block">Login</span>
+                  </button>
+                )}
+              </div>
             </div>
 
             {/* Mobile Icons */}
             <div className="flex lg:hidden items-center space-x-2">
-              <button className="cursor-pointer text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" aria-label="Wishlist">
+              <button 
+                onClick={() => navigate('/wishlist')}
+                className="cursor-pointer text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" 
+                aria-label="Wishlist"
+              >
                 <Heart size={22} className="group-hover:scale-110 transition-transform" />
                 <span className="absolute -top-1 -right-1 bg-gradient-to-br from-pink-500 to-rose-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow-lg shadow-pink-500/40 ring-2 ring-white">
                   {wishlistCount}
                 </span>
               </button>
-              <button className="cursor-pointer text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" aria-label="Cart">
+              <button 
+                onClick={() => navigate('/cart')}
+                className="cursor-pointer text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group" 
+                aria-label="Cart"
+              >
                 <ShoppingCart size={22} className="group-hover:scale-110 transition-transform" />
                 <span className="absolute -top-1 -right-1 bg-gradient-to-br from-purple-500 to-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow-lg shadow-purple-500/40 ring-2 ring-white">
                   {getCartCount()}                
                 </span>
               </button>
-              <button className="cursor-pointer flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-all duration-300 px-3 py-2 hover:bg-purple-50 rounded-lg group" aria-label="Profile">
-                <User size={22} className="group-hover:scale-110 transition-transform" />
-              </button>
+              
             </div>
 
             {/* Mobile Menu Button */}
@@ -179,15 +332,98 @@ export default function Navbar() {
               <h3 className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wider">
                 Categories
               </h3>
-              <NavLink to="/men" className={({ isActive }) => `block px-5 py-4 rounded-2xl text-base font-medium transition-all duration-300 shadow-sm border border-gray-100 ${isActive ? activeClass : inactiveClass}`}>
+              <NavLink 
+                to="/men" 
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) => `block px-5 py-4 rounded-2xl text-base font-medium transition-all duration-300 shadow-sm border border-gray-100 ${isActive ? activeClass : inactiveClass}`}
+              >
                 Men
               </NavLink>
-              <NavLink to="/women" className={({ isActive }) => `block px-5 py-4 rounded-2xl text-base font-medium transition-all duration-300 shadow-sm border border-gray-100 ${isActive ? activeClass : inactiveClass}`}>
+              <NavLink 
+                to="/women" 
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) => `block px-5 py-4 rounded-2xl text-base font-medium transition-all duration-300 shadow-sm border border-gray-100 ${isActive ? activeClass : inactiveClass}`}
+              >
                 Women
               </NavLink>
-              <NavLink to="/accessories" className={({ isActive }) => `block px-5 py-4 rounded-2xl text-base font-medium transition-all duration-300 shadow-sm border border-gray-100 ${isActive ? activeClass : inactiveClass}`}>
+              <NavLink 
+                to="/accessories" 
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) => `block px-5 py-4 rounded-2xl text-base font-medium transition-all duration-300 shadow-sm border border-gray-100 ${isActive ? activeClass : inactiveClass}`}
+              >
                 Accessories
               </NavLink>
+            </div>
+
+            {/* Profile Options in Mobile Menu */}
+            <div className="space-y-2">
+              <h3 className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                Account
+              </h3>
+              {currentUser ? (
+                // Logged In - Show Profile Options with User Info
+                <>
+                  {/* User Info in Mobile Menu */}
+                  <div className="px-5 py-4 rounded-2xl border border-gray-100 bg-gray-50 mb-3">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                        {getUserInitials()}
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-gray-900">
+                          Hello, {getUserDisplayName()}!
+                        </p>
+                        <p className="text-xs text-gray-500 mt-1">
+                          Welcome to GYM SHARK
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      navigate('/profile');
+                    }}
+                    className="w-full flex items-center space-x-3 px-5 py-4 rounded-2xl text-base font-medium text-gray-700 transition-all duration-300 shadow-sm border border-gray-100 hover:text-purple-600 hover:border-purple-200"
+                  >
+                    <UserIcon size={20} />
+                    <span>Profile</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      navigate('/orders');
+                    }}
+                    className="w-full flex items-center space-x-3 px-5 py-4 rounded-2xl text-base font-medium text-gray-700 transition-all duration-300 shadow-sm border border-gray-100 hover:text-purple-600 hover:border-purple-200"
+                  >
+                    <Package size={20} />
+                    <span>My Orders</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      handleSignOut();
+                    }}
+                    className="w-full flex items-center space-x-3 px-5 py-4 rounded-2xl text-base font-medium text-red-600 transition-all duration-300 shadow-sm border border-gray-100 hover:bg-red-50 hover:border-red-200"
+                  >
+                    <LogOut size={20} />
+                    <span>Sign Out</span>
+                  </button>
+                </>
+              ) : (
+                // Not Logged In - Show Login Option
+                <button
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    navigate('/login');
+                  }}
+                  className="w-full flex items-center space-x-3 px-5 py-4 rounded-2xl text-base font-medium text-gray-700 transition-all duration-300 shadow-sm border border-gray-100 hover:text-purple-600 hover:border-purple-200"
+                >
+                  <LogIn size={20} />
+                  <span>Login</span>
+                </button>
+              )}
             </div>
           </div>
         </div>

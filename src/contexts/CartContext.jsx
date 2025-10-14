@@ -1,8 +1,8 @@
-// src/contexts/CartContext.jsx
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import axiosInstance from '../api/axiosInstance';
 import { toast } from 'react-toastify';
 import { debounce } from 'lodash';
+import { useAuth } from './AuthContext';
 
 const CartContext = createContext();
 
@@ -17,16 +17,17 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
+   const { currentUser } = useAuth(); // Get currentUser from AuthContext
 
-  // Fetch user and cart on mount
+  // Sync cart with authentication state
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user) {
-      setCurrentUser(user);
-      fetchCart(user.id);
+    if (currentUser) {
+      fetchCart(currentUser.id);
+    } else {
+      // Clear cart when user logs out
+      setCart([]);
     }
-  }, []);
+  }, [currentUser]); // triggers when currentUser changes
 
   const fetchCart = async (userId) => {
     try {
@@ -41,9 +42,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // --------------------------
   // Background cart sync (non-blocking)
-  // --------------------------
   const syncCart = async (updatedCart) => {
     if (!currentUser) return;
     try {
@@ -54,7 +53,6 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // Debounce to avoid multiple rapid API calls
   const debouncedSync = useCallback(debounce(syncCart, 300), [currentUser]);
 
   // --------------------------
@@ -79,11 +77,10 @@ export const CartProvider = ({ children }) => {
         updatedCart = [...prevCart, cartItem];
       }
 
-      debouncedSync(updatedCart); // Sync with server in background
+      debouncedSync(updatedCart);
       return updatedCart;
     });
 
-    // Show toast outside of setCart to prevent duplicate renders
     const existingItem = cart.find(item => item.id === product.id);
     if (existingItem) {
       toast.info(`Quantity increased to ${existingItem.quantity + quantity}`);
@@ -94,42 +91,34 @@ export const CartProvider = ({ children }) => {
 
   const removeFromCart = (productId) => {
     if (!currentUser) return;
-
-    // Show toast before state update
     toast.success('Product removed from cart');
-    
     setCart((prevCart) => {
       const updatedCart = prevCart.filter(item => item.id !== productId);
-      debouncedSync(updatedCart); // Sync in background
+      debouncedSync(updatedCart);
       return updatedCart;
     });
   };
 
   const updateQuantity = (productId, newQuantity) => {
     if (!currentUser) return;
-
     if (newQuantity < 1) {
       removeFromCart(productId);
       return;
     }
-
     setCart((prevCart) => {
       const updatedCart = prevCart.map(item =>
         item.id === productId ? { ...item, quantity: newQuantity } : item
       );
-      debouncedSync(updatedCart); // Background sync
+      debouncedSync(updatedCart);
       return updatedCart;
     });
   };
 
   const clearCart = () => {
     if (!currentUser) return;
-
-    // Show toast before state update
     toast.success('Cart cleared');
-    
     setCart([]);
-    debouncedSync([]); // Background sync
+    debouncedSync([]);
   };
 
   // --------------------------
@@ -137,21 +126,21 @@ export const CartProvider = ({ children }) => {
   // --------------------------
   const isInCart = (productId) => cart.some(item => item.id === productId);
   const getCartItem = (productId) => cart.find(item => item.id === productId);
-  const getCartCount = () => cart.reduce((total, item) => total + item.quantity, 0);
-  const getCartTotal = () => cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  
-  // NEW: Function to get quantity of a specific item in cart
-  const getCartItemCount = (productId) => {
-    const item = cart.find(item => item.id === productId);
-    return item ? item.quantity : 0;
+
+  // ✅ Fixed: Return total or per-product count
+  const getCartCount = (productId) => {
+    if (productId) {
+      const item = cart.find(i => i.id === productId);
+      return item ? item.quantity : 0;
+    }
+    return cart.reduce((total, item) => total + item.quantity, 0);
   };
+
+  const getCartTotal = () => cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   const handleAddToCart = (product) => addToCart(product, 1);
   const refreshCart = () => currentUser && fetchCart(currentUser.id);
 
-  // --------------------------
-  // Context value
-  // --------------------------
   const value = {
     cart,
     loading,
@@ -163,9 +152,8 @@ export const CartProvider = ({ children }) => {
     getCartItem,
     getCartCount,
     getCartTotal,
-    getCartItemCount, // Added missing function
     handleAddToCart,
-    refreshCart,
+    refreshCart
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

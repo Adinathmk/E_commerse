@@ -2,6 +2,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axiosInstance from '../api/axiosInstance';
 import { toast } from 'react-toastify';
+import { useAuth } from './AuthContext'; // Import the auth context
 
 const WishlistContext = createContext();
 
@@ -16,16 +17,17 @@ export const useWishlist = () => {
 export const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
+  const { currentUser } = useAuth(); // Get currentUser from AuthContext
 
-  // Get current user from localStorage or your auth context
+  // Sync wishlist with authentication state
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user) {
-      setCurrentUser(user);
-      fetchWishlist(user.id);
+    if (currentUser) {
+      fetchWishlist(currentUser.id);
+    } else {
+      // Clear wishlist when user logs out
+      setWishlist([]);
     }
-  }, []);
+  }, [currentUser]); // This will trigger when currentUser changes
 
   const fetchWishlist = async (userId) => {
     try {
@@ -40,6 +42,7 @@ export const WishlistProvider = ({ children }) => {
     }
   };
 
+  // ... rest of your functions remain the same
   const addToWishlist = async (product) => {
     if (!currentUser) {
       toast.error('Please login to add items to wishlist');
@@ -49,7 +52,6 @@ export const WishlistProvider = ({ children }) => {
     try {
       setLoading(true);
       
-      // Check if product is already in wishlist
       const isInWishlist = wishlist.some(item => item.id === product.id);
       
       if (isInWishlist) {
@@ -57,11 +59,9 @@ export const WishlistProvider = ({ children }) => {
         return;
       }
 
-      // Update wishlist in local state
       const updatedWishlist = [...wishlist, product];
       setWishlist(updatedWishlist);
 
-      // Update wishlist on server
       await axiosInstance.patch(`/users/${currentUser.id}`, {
         wishlist: updatedWishlist
       });
@@ -70,7 +70,6 @@ export const WishlistProvider = ({ children }) => {
     } catch (error) {
       console.error('Error adding to wishlist:', error);
       toast.error('Failed to add product to wishlist');
-      // Revert local state on error
       setWishlist(wishlist);
     } finally {
       setLoading(false);
@@ -83,11 +82,9 @@ export const WishlistProvider = ({ children }) => {
     try {
       setLoading(true);
       
-      // Update wishlist in local state
       const updatedWishlist = wishlist.filter(item => item.id !== productId);
       setWishlist(updatedWishlist);
 
-      // Update wishlist on server
       await axiosInstance.patch(`/users/${currentUser.id}`, {
         wishlist: updatedWishlist
       });
@@ -96,7 +93,6 @@ export const WishlistProvider = ({ children }) => {
     } catch (error) {
       console.error('Error removing from wishlist:', error);
       toast.error('Failed to remove product from wishlist');
-      // Revert local state on error
       setWishlist(wishlist);
     } finally {
       setLoading(false);

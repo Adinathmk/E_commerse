@@ -4,11 +4,10 @@ import { useWishlist } from '../contexts/WishlistContext';
 import { useCart } from '../contexts/CartContext';
 import { Heart, ShoppingBag, Trash2, Plus, Check, Grid3X3, List } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 
 export default function WishlistPage() {
   const { wishlist, removeFromWishlist, clearWishlist, loading } = useWishlist();
-  const { handleAddToCart, isInCart, getCartItemCount } = useCart();
+  const { handleAddToCart, isInCart ,getCartCount} = useCart();
   const [layout, setLayout] = useState('grid'); // 'grid' or 'list'
 
   const handleAddToCartFromWishlist = async (product) => {
@@ -129,7 +128,7 @@ export default function WishlistPage() {
               onAddToCart={handleAddToCartFromWishlist}
               onRemove={handleRemoveFromWishlist}
               isInCart={isInCart(product.id)}
-              cartItemCount={getCartItemCount(product.id)}
+              cartItemCount={getCartCount(product.id)}
               layout={layout}
             />
           ))}

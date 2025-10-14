@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext"; // import your AuthContext
+import { toast } from "react-toastify";
 
 const SignInPage = () => {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ const SignInPage = () => {
     setLoading(false);
 
     if (response.success) {
-      alert(`✅ Logged in as ${response.data.name || response.data.email}`);
+      toast.success(`Logged in as ${response.data.name || response.data.email}`);
       setFormData({ email: "", password: "" });
       // Navigate to dashboard or home page after login
       navigate("/"); 

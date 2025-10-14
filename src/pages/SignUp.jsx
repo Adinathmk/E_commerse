@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext"; // Use AuthContext hook
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -60,12 +61,12 @@ const SignUpPage = () => {
     setLoading(false);
 
     if (response.success) {
-      alert(`✅ Account created successfully for ${response.data.name}`);
+      toast.success(` Account created successfully for ${response.data.name}`);
       setFormData({ name: "", email: "", password: "", confirmPassword: "" });
       setSubmitted(false);
       navigate("/login"); // Navigate to login after successful signup
     } else {
-      alert(`❌ ${response.message}`);
+      toast.error(` ${response.message}`);
     }
   };
 
