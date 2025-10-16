@@ -1,34 +1,39 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 
-export default function ProductFilter({ products = [], onFilter = () => {}, onSort = () => {} }) {
+export default function ProductFilter({ products = [], onFilter = () => {},setIsFilterOpen=()=>{} }) {
   const [selectedSize, setSelectedSize] = useState("");
   const [priceRange, setPriceRange] = useState([0, 2000]);
   const [sortBy, setSortBy] = useState("");
 
-  const sizes = [...new Set(products.flatMap((p) => p.sizes || []))];
-
+  // Reset filters
   const handleReset = useCallback(() => {
     setSelectedSize("");
     setPriceRange([0, 2000]);
     setSortBy("");
     onFilter(products);
-    onSort(products);
-  }, [products, onFilter, onSort]);
+  }, [products]);
 
+  useEffect(() => {
+    handleReset();
+  }, [products]);
+  
+  // Apply filters
   const handleApply = () => {
-    // Filter
-    let filtered = products.filter((p) =>
-      (!selectedSize || p.sizes?.includes(selectedSize)) &&
-      p.price >= priceRange[0] && p.price <= priceRange[1]
+    let filtered = products.filter(
+      (p) =>
+        (!selectedSize || p.sizes?.includes(selectedSize)) &&
+        p.price >= priceRange[0] &&
+        p.price <= priceRange[1]
     );
 
-    // Sort
     if (sortBy === "price-low-high") filtered.sort((a, b) => a.price - b.price);
     else if (sortBy === "price-high-low") filtered.sort((a, b) => b.price - a.price);
-    else if (sortBy === "newest") filtered.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-
+    else if (sortBy === "newest")
+      filtered.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+    
+    setIsFilterOpen(false);
     onFilter(filtered);
-    onSort(filtered);
+    
   };
 
   return (
@@ -68,8 +73,16 @@ export default function ProductFilter({ products = [], onFilter = () => {}, onSo
               <span className="text-xs font-medium">{option.label}</span>
               {sortBy === option.value && (
                 <div className="w-4 h-4 bg-black rounded-full flex items-center justify-center">
-                  <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <svg
+                    className="w-2.5 h-2.5 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </div>
               )}
@@ -78,26 +91,27 @@ export default function ProductFilter({ products = [], onFilter = () => {}, onSo
         </div>
       </div>
 
-      {/* Size Filter */}
+      {/* Size Filter (Manual Sizes) */}
       <div className="space-y-3">
-  <h3 className="text-sm font-medium text-gray-900">Size</h3>
-  <div className="grid grid-cols-4 gap-2">
-    {["S", "M", "L", "XL"].map((size) => (
-      <button
-        key={size}
-        onClick={() => setSelectedSize(selectedSize === size ? "" : size)}
-        className={`py-2.5 rounded-lg border text-xs font-medium transition-all duration-200 hover:scale-105 ${
-          selectedSize === size
-            ? "border-black bg-black text-white shadow-md"
-            : "border-gray-100 text-gray-600 hover:border-gray-300 hover:bg-gray-50"
-        }`}
-      >
-        {size}
-      </button>
-    ))}
-  </div>
-</div>
-
+        <h3 className="text-sm font-medium text-gray-900">Size</h3>
+        <div className="grid grid-cols-4 gap-2">
+          {["S", "M", "L", "XL"].map((size) => (
+            <button
+              key={size}
+              onClick={() =>
+                setSelectedSize(selectedSize === size ? "" : size)
+              }
+              className={`py-2.5 rounded-lg border text-xs font-medium transition-all duration-200 hover:scale-105 ${
+                selectedSize === size
+                  ? "border-black bg-black text-white shadow-md"
+                  : "border-gray-100 text-gray-600 hover:border-gray-300 hover:bg-gray-50"
+              }`}
+            >
+              {size}
+            </button>
+          ))}
+        </div>
+      </div>
 
       {/* Price Range */}
       <div className="space-y-4">
@@ -105,30 +119,43 @@ export default function ProductFilter({ products = [], onFilter = () => {}, onSo
         <div className="space-y-3">
           <div className="flex gap-3">
             <div className="flex-1">
-              <label className="block text-xs text-gray-500 mb-1 font-medium">Min</label>
+              <label className="block text-xs text-gray-500 mb-1 font-medium">
+                Min
+              </label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">₹</span>
+                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">
+                  ₹
+                </span>
                 <input
                   type="number"
                   min="0"
                   max={priceRange[1]}
                   value={priceRange[0]}
-                  onChange={(e) => setPriceRange([e.target.value, priceRange[1]])}
+                  onChange={(e) =>
+                    setPriceRange([e.target.value, priceRange[1]])
+                  }
                   className="w-full pl-7 pr-2 py-2 border border-gray-200 rounded-lg text-xs focus:ring-1 focus:ring-black focus:border-black transition-all duration-200 bg-white"
                   placeholder="0"
                 />
               </div>
             </div>
+
             <div className="flex-1">
-              <label className="block text-xs text-gray-500 mb-1 font-medium">Max</label>
+              <label className="block text-xs text-gray-500 mb-1 font-medium">
+                Max
+              </label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">₹</span>
+                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">
+                  ₹
+                </span>
                 <input
                   type="number"
                   min={priceRange[0]}
                   max="2000"
                   value={priceRange[1]}
-                  onChange={(e) => setPriceRange([priceRange[0], e.target.value])}
+                  onChange={(e) =>
+                    setPriceRange([priceRange[0], e.target.value])
+                  }
                   className="w-full pl-7 pr-2 py-2 border border-gray-200 rounded-lg text-xs focus:ring-1 focus:ring-black focus:border-black transition-all duration-200 bg-white"
                   placeholder="2000"
                 />

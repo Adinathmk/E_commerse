@@ -21,7 +21,7 @@ export const loginUserAPI = async (email, password) => {
   try {
     const { data } = await axiosInstance.get(`/users?email=${email}`);
     if (data.length === 0) return { success: false, message: "User not found" };
-
+    
     const user = data[0];
     if (user.password !== password) return { success: false, message: "Invalid password" };
 

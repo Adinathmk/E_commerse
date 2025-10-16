@@ -3,8 +3,8 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import MenProducts from './pages/categories/MenProducts';
-import WomenProducts from './pages/categories/WomenProducts';
 import AccessoriesProducts from './pages/Categories/AccessoriesProducts';
+import WomenProducts from './pages/Categories/WomenProducts';
 import { ProductProvider } from './contexts/ProductContext';
 import { AuthProvider } from './contexts/AuthContext';
 import MainLayout from './layouts/MainLayout';
@@ -13,6 +13,7 @@ import { ToastContainer } from 'react-toastify';
 import { CartProvider } from './contexts/CartContext';
 import CartPage from './pages/CartPage';
 import WishlistPage from './pages/WishlistPage';
+import Products from './pages/Products';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
                       <Route path="/men" element={<MenProducts />} />
                       <Route path="/women" element={<WomenProducts />} />
                       <Route path="/accessories" element={<AccessoriesProducts />} />
+                      <Route path="/products/:category?" element={<Products/>}/>
                       <Route path="/cart" element={<CartPage />} />
                       <Route path="/wishlist" element={<WishlistPage />} />
                     </Route>

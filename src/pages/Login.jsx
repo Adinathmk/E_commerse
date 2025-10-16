@@ -45,7 +45,7 @@ const SignInPage = () => {
       // Navigate to dashboard or home page after login
       navigate("/"); 
     } else {
-      alert(`❌ ${response.message}`);
+      toast.error(` ${response.message}`);
     }
   };
 

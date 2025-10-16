@@ -57,7 +57,7 @@ export default function ProductCard({ product }) {
       {/* Wishlist Button */}
       <button 
         onClick={handleWishlistClick}
-        className={`absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+        className={`absolute top-4 right-4 z-10 opacity-0  group-hover:opacity-100 transition-opacity duration-300 ${
           isWishlisted ? 'opacity-100' : ''
         }`}
       >

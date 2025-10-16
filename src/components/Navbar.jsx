@@ -108,13 +108,13 @@ export default function Navbar() {
           {/* Center - Categories */}
           <div className="hidden lg:flex items-center justify-center flex-1 max-w-2xl">
             <div className="flex items-center space-x-8">
-              <NavLink to="/men" className={({ isActive }) => `group flex items-center space-x-1 px-3 py-2 text-sm transition-colors duration-300 ${isActive ? activeClass : inactiveClass}`}>
+              <NavLink to="/products/men" className={({ isActive }) => `group flex items-center space-x-1 px-3 py-2 text-sm transition-colors duration-300 ${isActive ? activeClass : inactiveClass}`}>
                 Men
               </NavLink>
-              <NavLink to="/women" className={({ isActive }) => `group flex items-center space-x-1 px-3 py-2 text-sm transition-colors duration-300 ${isActive ? activeClass : inactiveClass}`}>
+              <NavLink to="/products/women" className={({ isActive }) => `group flex items-center space-x-1 px-3 py-2 text-sm transition-colors duration-300 ${isActive ? activeClass : inactiveClass}`}>
                 Women
               </NavLink>
-              <NavLink to="/accessories" className={({ isActive }) => `group flex items-center space-x-1 px-3 py-2 text-sm transition-colors duration-300 ${isActive ? activeClass : inactiveClass}`}>
+              <NavLink to="/products/accessories" className={({ isActive }) => `group flex items-center space-x-1 px-3 py-2 text-sm transition-colors duration-300 ${isActive ? activeClass : inactiveClass}`}>
                 Accessories
               </NavLink>
             </div>
