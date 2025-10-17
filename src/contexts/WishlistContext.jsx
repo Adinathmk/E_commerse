@@ -50,15 +50,7 @@ export const WishlistProvider = ({ children }) => {
     }
 
     try {
-      setLoading(true);
-      
-      const isInWishlist = wishlist.some(item => item.id === product.id);
-      
-      if (isInWishlist) {
-        toast.info('Product is already in your wishlist');
-        return;
-      }
-
+      setLoading(true);      
       const updatedWishlist = [...wishlist, product];
       setWishlist(updatedWishlist);
 
@@ -107,12 +99,12 @@ export const WishlistProvider = ({ children }) => {
     if (!currentUser) return;
 
     try {
-      setLoading(true);
-      setWishlist([]);
+      setLoading(true);      
       
       await axiosInstance.patch(`/users/${currentUser.id}`, {
         wishlist: []
       });
+      setWishlist([]);
 
       toast.success('Wishlist cleared');
     } catch (error) {

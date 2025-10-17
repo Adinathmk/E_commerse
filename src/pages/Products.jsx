@@ -66,7 +66,7 @@ export default function Products() {
   );
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-full bg-white">
       <div className="max-w-8xl mx-auto">
         <div className="lg:flex lg:gap-12 px-6 lg:px-12 py-12">
     
@@ -83,7 +83,7 @@ export default function Products() {
           {/* === Main Content === */}
           <main className="flex-1">
             {/* Header */}
-            <div className="flex items-center justify-between mb-0">
+            <div className="flex items-center  mb-0">
               
               {/* Mobile Filter Button */}
               <button
@@ -111,7 +111,7 @@ export default function Products() {
       {/* === Mobile Filter Overlay === */}
       <div
         className={`fixed inset-0 z-50 transition-all duration-500 lg:hidden ${
-          isFilterOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          isFilterOpen ? "opacity-100 " : "opacity-0 invisible"
         }`}
       >
         {/* Background Overlay */}
@@ -140,7 +140,7 @@ export default function Products() {
             </div>
 
             {/* Filter Content */}
-            <div className="flex-1 overflow-y-auto scrollbar-none">
+            <div className="flex-1 overflow-y-auto scrollbar-none py-3">
               <div className="pl-20">
                 <ProductFilter 
                   products={products} 

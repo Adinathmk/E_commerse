@@ -57,8 +57,8 @@ export default function ProductCard({ product }) {
       {/* Wishlist Button */}
       <button 
         onClick={handleWishlistClick}
-        className={`absolute top-4 right-4 z-10 opacity-0  group-hover:opacity-100 transition-opacity duration-300 ${
-          isWishlisted ? 'opacity-100' : ''
+        className={`absolute top-4 right-4 z-10   group-hover:opacity-100 transition-opacity duration-300 ${
+          isWishlisted ? 'opacity-100' : 'opacity-0'
         }`}
       >
         <Heart 
@@ -83,7 +83,7 @@ export default function ProductCard({ product }) {
           <img
             src={product.images[1]}
             alt={product.name}
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-0 group-hover:opacity-100 group-hover:scale-105"
+            className="absolute inset-0 w-ful h-full object-cover transition-transform duration-700 opacity-0 group-hover:opacity-100 group-hover:scale-105"
           />
         )}
 
@@ -91,7 +91,7 @@ export default function ProductCard({ product }) {
         {(product.isNewArrival || product.isTopSelling) && (
           <div className="absolute top-4 left-4">
             {product.isNewArrival && (
-              <span className="bg-black text-white text-xs tracking-wider font-light px-3 py-1.5 uppercase">
+              <span className="bg-black text-white text-xs tracking-wider font-light lg:px-3 lg:py-1.5 md:px-2 md:py-1 uppercase">
                 New
               </span>
             )}

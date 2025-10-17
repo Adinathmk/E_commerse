@@ -5,8 +5,77 @@
       "name": "Adinath",
       "email": "adinathmkclt@gmail.com",
       "password": "123456789",
-      "cart": [],
-      "wishlist": []
+      "wishlist": [
+        {
+          "id": "2",
+          "name": "Legacy T-Shirt",
+          "description": "Old-school styles meet new-school functionalities in a collection designed to make gains and build legacies.",
+          "price": 899.99,
+          "count": 60,
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/LegacyT-ShirtGSClassicBlueA5A3B-UDBR-1269-0148_c19d68b4-852c-43e3-ba0c-1ccda42f9731_1920x.jpg?v=1742894725",
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/LegacyT-ShirtGSClassicBlueA5A3B-UDBR-1285-0150_d9182597-46b6-4076-a9eb-bb9e307364da_1920x.jpg?v=1742894725"
+          ],
+          "is_active": true,
+          "created_at": "2025-10-11T09:31:00Z",
+          "isNewArrival": true,
+          "isTopSelling": true,
+          "type": "T Shirt",
+          "sizes": [
+            "S",
+            "M",
+            "L"
+          ],
+          "category": "women"
+        },
+        {
+          "id": "6",
+          "name": "Men's Compression Tights",
+          "description": "Compression fit for muscle support and improved circulation during workouts.",
+          "price": 1199.99,
+          "count": 20,
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
+          ],
+          "is_active": true,
+          "created_at": "2025-10-11T09:35:00Z",
+          "isNewArrival": false,
+          "isTopSelling": false,
+          "type": "tights",
+          "sizes": [
+            "M",
+            "L",
+            "XL"
+          ],
+          "category": "women"
+        }
+      ],
+      "cart": [
+        {
+          "id": "2",
+          "name": "Legacy T-Shirt",
+          "description": "Old-school styles meet new-school functionalities in a collection designed to make gains and build legacies.",
+          "price": 899.99,
+          "count": 60,
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/LegacyT-ShirtGSClassicBlueA5A3B-UDBR-1269-0148_c19d68b4-852c-43e3-ba0c-1ccda42f9731_1920x.jpg?v=1742894725",
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/LegacyT-ShirtGSClassicBlueA5A3B-UDBR-1285-0150_d9182597-46b6-4076-a9eb-bb9e307364da_1920x.jpg?v=1742894725"
+          ],
+          "is_active": true,
+          "created_at": "2025-10-11T09:31:00Z",
+          "isNewArrival": true,
+          "isTopSelling": true,
+          "type": "T Shirt",
+          "sizes": [
+            "S",
+            "M",
+            "L"
+          ],
+          "category": "women",
+          "quantity": 1,
+          "addedAt": "2025-10-17T12:16:30.171Z"
+        }
+      ]
     },
     {
       "id": "08b0",

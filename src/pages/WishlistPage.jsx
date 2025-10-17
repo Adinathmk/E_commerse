@@ -189,11 +189,6 @@ function WishlistCard({ product, onAddToCart, onRemove, isInCart, cartItemCount,
               {product.isTopSelling && !product.isNewArrival && <span className="bg-black text-white text-xs tracking-wider font-light px-3 py-1.5 uppercase">Bestseller</span>}
               {product.discountPercentage && <span className="bg-red-600 text-white text-xs font-medium px-3 py-1.5 rounded-full mt-2">{product.discountPercentage}% OFF</span>}
             </div>
-            <div className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-              <button onClick={handleAddToCartClick} className={`w-full py-4 flex items-center justify-center gap-2 transition-colors ${isInCart ? 'bg-green-600 text-white hover:bg-green-700' : 'bg-black/90 text-white hover:bg-black'}`}>
-                {getButtonIcon()} <span className="text-sm tracking-wide font-light">{getButtonText()}</span>
-              </button>
-            </div>
           </div>
 
           <div className="flex-1 p-6">

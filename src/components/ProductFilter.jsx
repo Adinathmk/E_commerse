@@ -11,7 +11,7 @@ export default function ProductFilter({ products = [], onFilter = () => {},setIs
     setPriceRange([0, 2000]);
     setSortBy("");
     onFilter(products);
-  }, [products]);
+  }, [products])
 
   useEffect(() => {
     handleReset();

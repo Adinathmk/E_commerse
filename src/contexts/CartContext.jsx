@@ -17,13 +17,13 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(false);
-   const { currentUser } = useAuth(); // Get currentUser from AuthContext
+  const { currentUser } = useAuth(); // Get currentUser from AuthContext
 
   // Sync cart with authentication state
   useEffect(() => {
     if (currentUser) {
       fetchCart(currentUser.id);
-    } else {
+    } else { 
       // Clear cart when user logs out
       setCart([]);
     }
@@ -156,5 +156,7 @@ export const CartProvider = ({ children }) => {
     refreshCart
   };
 
-  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+  return <CartContext.Provider value={value}>
+            {children}
+        </CartContext.Provider>;
 };

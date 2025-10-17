@@ -15,7 +15,6 @@ export default function Navbar() {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const navigate = useNavigate();
   const profileModalRef = useRef(null);
-
   const activeClass = "text-purple-600 font-medium";
   const inactiveClass = "text-gray-700 font-medium";
 
