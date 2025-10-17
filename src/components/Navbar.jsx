@@ -17,6 +17,7 @@ export default function Navbar() {
   const profileModalRef = useRef(null);
   const activeClass = "text-purple-600 font-medium";
   const inactiveClass = "text-gray-700 font-medium";
+  const [searchValue,setSearchValue]=useState('')
 
   // Close modal when clicking outside
   useEffect(() => {
@@ -137,6 +138,8 @@ export default function Navbar() {
                 <input
                   type="text"
                   placeholder="Search products..."
+                  value={searchValue}
+                  onChange={(e)=>setSearchValue(e.target.value)}
                   className={`bg-transparent text-sm text-gray-700 placeholder-gray-500 focus:outline-none ml-2 transition-all duration-300 ${
                     isSearchOpen ? 'opacity-100 w-full' : 'opacity-0 w-0'
                   }`}
@@ -150,6 +153,11 @@ export default function Navbar() {
                     <X size={18} />
                   </button>
                 )}
+               <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-[500px] bg-white border border-gray-200 rounded-xl shadow-lg p-4 z-50">
+                  <p className="text-gray-600 text-sm">Recent searches or results...</p>
+              </div>
+
+
               </div>
             </div>
 

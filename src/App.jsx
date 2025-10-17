@@ -2,9 +2,6 @@ import { Routes, Route, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-import MenProducts from './pages/categories/MenProducts';
-import AccessoriesProducts from './pages/Categories/AccessoriesProducts';
-import WomenProducts from './pages/Categories/WomenProducts';
 import { ProductProvider } from './contexts/ProductContext';
 import { AuthProvider } from './contexts/AuthContext';
 import MainLayout from './layouts/MainLayout';
@@ -39,9 +36,6 @@ function App() {
                     {/* Routes with Navbar */}
                     <Route element={<MainLayout />}>
                       <Route path="/" element={''} />
-                      <Route path="/men" element={<MenProducts />} />
-                      <Route path="/women" element={<WomenProducts />} />
-                      <Route path="/accessories" element={<AccessoriesProducts />} />
                       <Route path="/products/:category?" element={<Products/>}/>
                       <Route path="/cart" element={<CartPage />} />
                       <Route path="/wishlist" element={<WishlistPage />} />
