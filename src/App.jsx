@@ -11,6 +11,7 @@ import { CartProvider } from './contexts/CartContext';
 import CartPage from './pages/CartPage';
 import WishlistPage from './pages/WishlistPage';
 import Products from './pages/Products';
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
                     <Route path="/signup" element={<SignUp />} />
                     {/* Routes with Navbar */}
                     <Route element={<MainLayout />}>
-                      <Route path="/" element={''} />
+                      <Route path="/" element={<Home/>} />
                       <Route path="/products/:category?" element={<Products/>}/>
                       <Route path="/cart" element={<CartPage />} />
                       <Route path="/wishlist" element={<WishlistPage />} />

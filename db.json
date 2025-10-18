@@ -5,31 +5,52 @@
       "name": "Adinath",
       "email": "adinathmkclt@gmail.com",
       "password": "123456789",
-      "wishlist": [],
-      "cart": [
+      "wishlist": [
         {
-          "id": "2",
-          "name": "Legacy T-Shirt",
-          "description": "Old-school styles meet new-school functionalities in a collection designed to make gains and build legacies.",
-          "price": 899.99,
-          "count": 60,
+          "id": "9",
+          "name": "Men's Running Jacket",
+          "description": "Lightweight, wind-resistant running jacket with reflective details for safety.",
+          "price": 1799.99,
+          "count": 15,
           "images": [
-            "https://cdn.shopify.com/s/files/1/0156/6146/files/LegacyT-ShirtGSClassicBlueA5A3B-UDBR-1269-0148_c19d68b4-852c-43e3-ba0c-1ccda42f9731_1920x.jpg?v=1742894725",
-            "https://cdn.shopify.com/s/files/1/0156/6146/files/LegacyT-ShirtGSClassicBlueA5A3B-UDBR-1285-0150_d9182597-46b6-4076-a9eb-bb9e307364da_1920x.jpg?v=1742894725"
+            "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
           ],
           "is_active": true,
-          "created_at": "2025-10-11T09:31:00Z",
-          "isNewArrival": true,
+          "created_at": "2025-10-11T09:38:00Z",
+          "isNewArrival": false,
           "isTopSelling": true,
-          "type": "T Shirt",
+          "type": "jacket",
           "sizes": [
-            "S",
             "M",
-            "L"
+            "L",
+            "XL"
           ],
-          "category": "women",
+          "category": "accessories"
+        }
+      ],
+      "cart": [
+        {
+          "id": "9",
+          "name": "Men's Running Jacket",
+          "description": "Lightweight, wind-resistant running jacket with reflective details for safety.",
+          "price": 1799.99,
+          "count": 15,
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
+          ],
+          "is_active": true,
+          "created_at": "2025-10-11T09:38:00Z",
+          "isNewArrival": false,
+          "isTopSelling": true,
+          "type": "jacket",
+          "sizes": [
+            "M",
+            "L",
+            "XL"
+          ],
+          "category": "accessories",
           "quantity": 1,
-          "addedAt": "2025-10-17T12:16:30.171Z"
+          "addedAt": "2025-10-18T12:40:11.388Z"
         }
       ]
     },

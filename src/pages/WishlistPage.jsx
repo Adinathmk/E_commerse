@@ -50,7 +50,7 @@ export default function WishlistPage() {
               Save your favorite items here to keep track of what you love.
             </p>
             <Link
-              to="/men"
+              to="/products/men"
               className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-xl hover:bg-gray-800 transition-colors font-medium"
             >
               <ShoppingBag className="w-5 h-5" />

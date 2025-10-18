@@ -31,7 +31,7 @@ export default function CartPage() {
         <h2 className="text-2xl font-semibold text-gray-900 mb-2">Your cart is empty</h2>
         <p className="text-gray-500 mb-8">Looks like you haven't added anything to your cart yet.</p>
         <Link
-          to="/men"
+          to="/products/men"
           className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium inline-block text-center"
         >
           Continue Shopping
