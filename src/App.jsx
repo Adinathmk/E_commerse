@@ -1,5 +1,4 @@
 import { Routes, Route, Outlet } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import { ProductProvider } from './contexts/ProductContext';

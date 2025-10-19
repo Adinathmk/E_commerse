@@ -51,6 +51,31 @@
           "category": "accessories",
           "quantity": 1,
           "addedAt": "2025-10-18T12:40:11.388Z"
+        },
+        {
+          "id": "1",
+          "name": "Arrival Marl T-Shirt",
+          "description": "It's your favourite t-shirt reworked with a marl design. The Arrival Marl T-Shirt offers a lightweight material, sweat-wicking properties and a slim fit design so you can perform to the max with confidence.",
+          "price": 799.99,
+          "count": 50,
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/ArrivalMarlT-ShirtSilhouetteGrey-LightGreyCoreMarlA2A1I-GBQG-0660_1920x.jpg?v=1730976945",
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/ArrivalMarlT-ShirtSilhouetteGrey-LightGreyCoreMarlA2A1I-GBQG-0667_1920x.jpg?v=1730976945"
+          ],
+          "is_active": true,
+          "created_at": "2025-10-11T09:30:00Z",
+          "isNewArrival": true,
+          "isTopSelling": false,
+          "type": "T Shirt",
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ],
+          "category": "men",
+          "quantity": 1,
+          "addedAt": "2025-10-19T15:49:23.493Z"
         }
       ]
     },

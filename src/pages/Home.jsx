@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import sampleVideo from '../assets/video-1.mp4';
+import sampleVideo2 from '../assets/video-2.mp4';
 import { ChevronDown, ShoppingBag, Search, User, Heart, Menu, X, Star, ArrowRight, Shield, Truck, Clock, ArrowLeft, ArrowRight as RightArrow } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import CountUp from '../utils/CountUp';
-import TiltedCard from '../utils/TiltedCard';
+import ScrollVelocity from '../utils/scrollVelocity';
+
 
 function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate=useNavigate();
   const featuredProducts = [
@@ -223,6 +224,7 @@ function Home() {
         </div>
       </section>
 
+      
 
        {/* Features Section */}
       <section className="py-16 white">
@@ -254,34 +256,23 @@ function Home() {
           </div>
         </div>
       </section>
+      <video
+          className="w-full "
+          src={sampleVideo2}
+          autoPlay
+          loop
+          muted
+        />
+      <section className="py-10 bg-gray-50">
+        <ScrollVelocity
+        texts={['Train Hard', 'Performance Meets Style','Gear Up for Greatness']} 
+        velocity={30} 
+        className="custom-scroll-text"
+        />
 
-
-      {/* Categories */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Shop by Category</h2>
-            <p className="text-xl text-gray-600">Find exactly what you're looking for</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.map((category, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-2xl cursor-pointer">
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h3 className="text-xl font-semibold mb-1">{category.name}</h3>
-                  <p className="text-sm opacity-90">{category.items}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
+
+
 
       {/* Testimonials */}
       <section className="py-20 bg-white">
@@ -299,7 +290,7 @@ function Home() {
               >
                 {testimonials.map((testimonial, index) => (
                   <div key={index} className="w-full flex-shrink-0 px-4">
-                    <div className="bg-gray-50 rounded-2xl p-8 text-center">
+                    <div className=" rounded-2xl p-8 text-center">
                       <div className="flex justify-center mb-6">
                         <img
                           src={testimonial.avatar}
@@ -347,71 +338,9 @@ function Home() {
           </div>
         </div>
       </section>
+      
 
-      {/* Newsletter */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">Stay Updated</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Subscribe to our newsletter for exclusive offers and new product launches
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-            />
-            <button className="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">
-              Subscribe
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-2xl font-bold mb-4">LUXE</h3>
-              <p className="text-gray-400">
-                Premium ecommerce experience with curated products and exceptional service.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Shop</h4>
-              <ul className="space-y-2 text-gray-400">
-                {['All Products', 'New Arrivals', 'Best Sellers', 'Sale'].map((item) => (
-                  <li key={item}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                {['About Us', 'Contact', 'Careers', 'Press'].map((item) => (
-                  <li key={item}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-gray-400">
-                {['FAQ', 'Shipping', 'Returns', 'Privacy Policy'].map((item) => (
-                  <li key={item}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 LUXE. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 }
