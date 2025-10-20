@@ -5,6 +5,7 @@ import { ChevronDown, ShoppingBag, Search, User, Heart, Menu, X, Star, ArrowRigh
 import { useNavigate } from 'react-router-dom';
 import CountUp from '../utils/CountUp';
 import ScrollVelocity from '../utils/scrollVelocity';
+import sampleimage1 from '../assets/testimonial-1.jpeg'
 
 
 function Home() {
@@ -44,7 +45,7 @@ function Home() {
       name: "Sarah Johnson",
       role: "Premium Member",
       text: "The quality and service exceeded my expectations. Fast shipping and exceptional products!",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100"
+      avatar: sampleimage1
     },
     {
       name: "Michael Chen",
@@ -223,11 +224,32 @@ function Home() {
           </div>
         </div>
       </section>
+   
+
+
+      <section className="py-10 bg-white">
+        <ScrollVelocity
+        texts={['Train Hard', 'Performance Meets Style','Gear Up for Greatness']} 
+        velocity={30} 
+        className="custom-scroll-text"
+        />
+
+      </section>
+
 
       
 
-       {/* Features Section */}
-      <section className="py-16 white">
+       
+      <video
+          className="w-full "
+          src={sampleVideo2}
+          autoPlay
+          loop
+          muted
+        />
+      
+      {/* Features Section */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
@@ -256,22 +278,6 @@ function Home() {
           </div>
         </div>
       </section>
-      <video
-          className="w-full "
-          src={sampleVideo2}
-          autoPlay
-          loop
-          muted
-        />
-      <section className="py-10 bg-gray-50">
-        <ScrollVelocity
-        texts={['Train Hard', 'Performance Meets Style','Gear Up for Greatness']} 
-        velocity={30} 
-        className="custom-scroll-text"
-        />
-
-      </section>
-
 
 
       {/* Testimonials */}
@@ -295,7 +301,7 @@ function Home() {
                         <img
                           src={testimonial.avatar}
                           alt={testimonial.name}
-                          className="w-16 h-16 rounded-full"
+                          className="w-20 h-20 rounded-full"
                         />
                       </div>
                       <p className="text-lg text-gray-700 mb-6 italic">"{testimonial.text}"</p>
@@ -346,3 +352,7 @@ function Home() {
 }
 
 export default Home;
+
+
+
+  

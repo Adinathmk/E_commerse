@@ -5,79 +5,8 @@
       "name": "Adinath",
       "email": "adinathmkclt@gmail.com",
       "password": "123456789",
-      "wishlist": [
-        {
-          "id": "9",
-          "name": "Men's Running Jacket",
-          "description": "Lightweight, wind-resistant running jacket with reflective details for safety.",
-          "price": 1799.99,
-          "count": 15,
-          "images": [
-            "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-          ],
-          "is_active": true,
-          "created_at": "2025-10-11T09:38:00Z",
-          "isNewArrival": false,
-          "isTopSelling": true,
-          "type": "jacket",
-          "sizes": [
-            "M",
-            "L",
-            "XL"
-          ],
-          "category": "accessories"
-        }
-      ],
-      "cart": [
-        {
-          "id": "9",
-          "name": "Men's Running Jacket",
-          "description": "Lightweight, wind-resistant running jacket with reflective details for safety.",
-          "price": 1799.99,
-          "count": 15,
-          "images": [
-            "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-          ],
-          "is_active": true,
-          "created_at": "2025-10-11T09:38:00Z",
-          "isNewArrival": false,
-          "isTopSelling": true,
-          "type": "jacket",
-          "sizes": [
-            "M",
-            "L",
-            "XL"
-          ],
-          "category": "accessories",
-          "quantity": 1,
-          "addedAt": "2025-10-18T12:40:11.388Z"
-        },
-        {
-          "id": "1",
-          "name": "Arrival Marl T-Shirt",
-          "description": "It's your favourite t-shirt reworked with a marl design. The Arrival Marl T-Shirt offers a lightweight material, sweat-wicking properties and a slim fit design so you can perform to the max with confidence.",
-          "price": 799.99,
-          "count": 50,
-          "images": [
-            "https://cdn.shopify.com/s/files/1/0156/6146/files/ArrivalMarlT-ShirtSilhouetteGrey-LightGreyCoreMarlA2A1I-GBQG-0660_1920x.jpg?v=1730976945",
-            "https://cdn.shopify.com/s/files/1/0156/6146/files/ArrivalMarlT-ShirtSilhouetteGrey-LightGreyCoreMarlA2A1I-GBQG-0667_1920x.jpg?v=1730976945"
-          ],
-          "is_active": true,
-          "created_at": "2025-10-11T09:30:00Z",
-          "isNewArrival": true,
-          "isTopSelling": false,
-          "type": "T Shirt",
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL"
-          ],
-          "category": "men",
-          "quantity": 1,
-          "addedAt": "2025-10-19T15:49:23.493Z"
-        }
-      ]
+      "wishlist": [],
+      "cart": []
     },
     {
       "id": "08b0",
@@ -119,13 +48,16 @@
   "products": [
     {
       "id": "1",
-      "name": "Arrival Marl T-Shirt",
-      "description": "It's your favourite t-shirt reworked with a marl design. The Arrival Marl T-Shirt offers a lightweight material, sweat-wicking properties and a slim fit design so you can perform to the max with confidence.",
-      "price": 799.99,
+      "name": "Geo Seamless T-Shirt",
+      "description": "Geo Seamless’s high-stretch designs, breathable fabrics and flattering slim fits keep your movements unrestricted and your mind undistracted. PSA: also makes your arms look huge.",
+      "price": 999.99,
+      "discountPrice": 899.99,
       "count": 50,
       "images": [
-        "https://cdn.shopify.com/s/files/1/0156/6146/files/ArrivalMarlT-ShirtSilhouetteGrey-LightGreyCoreMarlA2A1I-GBQG-0660_1920x.jpg?v=1730976945",
-        "https://cdn.shopify.com/s/files/1/0156/6146/files/ArrivalMarlT-ShirtSilhouetteGrey-LightGreyCoreMarlA2A1I-GBQG-0667_1920x.jpg?v=1730976945"
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/images-GeoSeamlessT_ShirtGSCementBrownGSSoulBrownA5A2D_NC8V_0261_V1a_1920x.jpg?v=1759149115",
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/images-GeoSeamlessT_ShirtGSCementBrownGSSoulBrownA5A2D_NC8V_0267_V1a_1920x.jpg?v=1759149115",
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/images-GeoSeamlessT_ShirtGSCementBrownGSSoulBrownA5A2D_NC8V_0276_V1a_1920x.jpg?v=1759149115",
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/images-GeoSeamlessT_ShirtGSCementBrownGSSoulBrownA5A2D_NC8V_0264_V1a_1920x.jpg?v=1759149115"
       ],
       "is_active": true,
       "created_at": "2025-10-11T09:30:00Z",
@@ -138,607 +70,47 @@
         "L",
         "XL"
       ],
-      "category": "men"
+      "category": "men",
+      "rating": 4,
+      "reviews": 1547,
+      "features": [
+        "Flattering slim fit & shoulder-accentuating raglan sleeves for a subtle nod to the physique you’ve worked for",
+        "Stay fully focused with lightweight material & a comfortable seamless design ",
+        "Breathable mesh & sweat-wicking tech keep you cool & dry ",
+        "Subtle jacquard camo pattern"
+      ]
     },
     {
       "id": "2",
-      "name": "Legacy T-Shirt",
-      "description": "Old-school styles meet new-school functionalities in a collection designed to make gains and build legacies.",
-      "price": 899.99,
-      "count": 60,
+      "name": "Lightweight Seamless T-Shirt",
+      "description": "Versatile fits & authentic conditioning graphics. Step up your staples with our graphic styles.",
+      "price": 1100,
+      "discountPrice": 1000,
+      "count": 50,
       "images": [
-        "https://cdn.shopify.com/s/files/1/0156/6146/files/LegacyT-ShirtGSClassicBlueA5A3B-UDBR-1269-0148_c19d68b4-852c-43e3-ba0c-1ccda42f9731_1920x.jpg?v=1742894725",
-        "https://cdn.shopify.com/s/files/1/0156/6146/files/LegacyT-ShirtGSClassicBlueA5A3B-UDBR-1285-0150_d9182597-46b6-4076-a9eb-bb9e307364da_1920x.jpg?v=1742894725"
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/images-LightweightRegSeamlessT_ShirtBlackSilhouetteGreyA2C7M_BBMW_6396_1920x.jpg?v=1752701861",
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/images-LightweightRegSeamlessT_ShirtBlackSilhouetteGreyA2C7M_BBMW_6405_1920x.jpg?v=1752701861",
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/images-LightweightRegSeamlessT_ShirtBlackSilhouetteGreyA2C7M_BBMW_6409_1920x.jpg?v=1752701861",
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/images-LightweightRegSeamlessT_ShirtBlackSilhouetteGreyA2C7M_BBMW_6417_1920x.jpg?v=1752701861"
       ],
       "is_active": true,
-      "created_at": "2025-10-11T09:31:00Z",
+      "created_at": "2025-10-11T09:30:00Z",
       "isNewArrival": true,
       "isTopSelling": true,
       "type": "T Shirt",
       "sizes": [
         "S",
-        "M",
-        "L"
-      ],
-      "category": "women"
-    },
-    {
-      "id": "3",
-      "name": "Men's Gym Shorts",
-      "description": "Quick-drying and flexible gym shorts with zip pockets for secure storage.",
-      "price": 999.99,
-      "count": 40,
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:32:00Z",
-      "isNewArrival": false,
-      "isTopSelling": true,
-      "type": "shorts",
-      "sizes": [
-        "M",
         "L",
         "XL"
       ],
-      "category": "men"
-    },
-    {
-      "id": "4",
-      "name": "Women's Training Leggings",
-      "description": "High-waisted leggings with compression support for performance and comfort.",
-      "price": 1299.99,
-      "count": 35,
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:33:00Z",
-      "isNewArrival": false,
-      "isTopSelling": true,
-      "type": "leggings",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "category": "women"
-    },
-    {
-      "id": "5",
-      "name": "Unisex Gym Hoodie",
-      "description": "Comfortable and stylish hoodie with thermal fabric for warmups or casual wear.",
-      "price": 1499.99,
-      "count": 25,
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:34:00Z",
-      "isNewArrival": false,
-      "isTopSelling": false,
-      "type": "hoodie",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "category": "men"
-    },
-    {
-      "id": "6",
-      "name": "Men's Compression Tights",
-      "description": "Compression fit for muscle support and improved circulation during workouts.",
-      "price": 1199.99,
-      "count": 20,
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:35:00Z",
-      "isNewArrival": false,
-      "isTopSelling": false,
-      "type": "tights",
-      "sizes": [
-        "M",
-        "L",
-        "XL"
-      ],
-      "category": "women"
-    },
-    {
-      "id": "7",
-      "name": "Women's Sports Bra",
-      "description": "Supportive sports bra with sweat-wicking technology for high-impact training.",
-      "price": 999.99,
-      "count": 45,
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:36:00Z",
-      "isNewArrival": true,
-      "isTopSelling": true,
-      "type": "sportsbra",
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "category": "women"
-    },
-    {
-      "id": "8",
-      "name": "Unisex Sweatpants",
-      "description": "Relaxed-fit sweatpants for post-gym comfort or casual lounging.",
-      "price": 1099.99,
-      "count": 30,
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:37:00Z",
-      "isNewArrival": false,
-      "isTopSelling": false,
-      "type": "sweatpants",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "category": "men"
-    },
-    {
-      "id": "9",
-      "name": "Men's Running Jacket",
-      "description": "Lightweight, wind-resistant running jacket with reflective details for safety.",
-      "price": 1799.99,
-      "count": 15,
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:38:00Z",
-      "isNewArrival": false,
-      "isTopSelling": true,
-      "type": "jacket",
-      "sizes": [
-        "M",
-        "L",
-        "XL"
-      ],
-      "category": "accessories"
-    },
-    {
-      "id": "10",
-      "name": "Women's Cropped Hoodie",
-      "description": "Trendy cropped hoodie with fleece lining for cozy pre- and post-workout wear.",
-      "price": 1399.99,
-      "count": 18,
-      "category": "Outerwear",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:39:00Z",
-      "isNewArrival": true,
-      "isTopSelling": false,
-      "type": "hoodie",
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "categoryType": "female"
-    },
-    {
-      "id": "11",
-      "name": "Unisex Training Cap",
-      "description": "Breathable and adjustable training cap for all-day comfort.",
-      "price": 499.99,
-      "count": 80,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:40:00Z",
-      "isNewArrival": true,
-      "isTopSelling": true,
-      "type": "cap",
-      "sizes": [],
-      "categoryType": "unisex"
-    },
-    {
-      "id": "12",
-      "name": "Men's Training Gloves",
-      "description": "Durable, non-slip gloves for secure grip during strength training.",
-      "price": 699.99,
-      "count": 70,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:41:00Z",
-      "isNewArrival": false,
-      "isTopSelling": false,
-      "type": "gloves",
-      "sizes": [
-        "M",
-        "L"
-      ],
-      "categoryType": "male"
-    },
-    {
-      "id": "13",
-      "name": "Women's Headband",
-      "description": "Elastic and sweat-absorbing headband to keep hair and sweat out of your way.",
-      "price": 299.99,
-      "count": 100,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:42:00Z",
-      "isNewArrival": true,
-      "isTopSelling": false,
-      "type": "headband",
-      "sizes": [],
-      "categoryType": "female"
-    },
-    {
-      "id": "14",
-      "name": "Unisex Duffel Bag",
-      "description": "Spacious gym bag with multiple compartments and durable straps.",
-      "price": 1599.99,
-      "count": 20,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:43:00Z",
-      "isNewArrival": false,
-      "isTopSelling": true,
-      "type": "bag",
-      "sizes": [],
-      "categoryType": "unisex"
-    },
-    {
-      "id": "15",
-      "name": "Unisex Gym Socks",
-      "description": "Cushioned gym socks with arch support and breathable mesh zones.",
-      "price": 399.99,
-      "count": 120,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:44:00Z",
-      "isNewArrival": false,
-      "isTopSelling": false,
-      "type": "socks",
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "categoryType": "unisex"
-    },
-    {
-      "id": "16",
-      "name": "Men's Running Shoes",
-      "description": "Lightweight shoes with responsive cushioning for all types of running.",
-      "price": 2599.99,
-      "count": 30,
-      "category": "Shoes",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:45:00Z",
-      "isNewArrival": true,
-      "isTopSelling": true,
-      "type": "shoes",
-      "sizes": [
-        "7",
-        "8",
-        "9",
-        "10",
-        "11"
-      ],
-      "categoryType": "male"
-    },
-    {
-      "id": "17",
-      "name": "Women's Running Shoes",
-      "description": "Flexible and breathable shoes for high-performance running and training.",
-      "price": 2399.99,
-      "count": 25,
-      "category": "Shoes",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:46:00Z",
-      "isNewArrival": true,
-      "isTopSelling": true,
-      "type": "shoes",
-      "sizes": [
-        "5",
-        "6",
-        "7",
-        "8",
-        "9"
-      ],
-      "categoryType": "female"
-    },
-    {
-      "id": "18",
-      "name": "Unisex Water Bottle",
-      "description": "Durable, BPA-free water bottle perfect for gym and outdoor activities.",
-      "price": 499.99,
-      "count": 100,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:47:00Z",
-      "isNewArrival": true,
-      "isTopSelling": false,
-      "type": "bottle",
-      "sizes": [],
-      "categoryType": "unisex"
-    },
-    {
-      "id": "19",
-      "name": "Men's Sweatband Set",
-      "description": "Set of 2 sweatbands for wrist and head, keeps sweat away during workouts.",
-      "price": 299.99,
-      "count": 80,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:48:00Z",
-      "isNewArrival": false,
-      "isTopSelling": false,
-      "type": "sweatband",
-      "sizes": [],
-      "categoryType": "male"
-    },
-    {
-      "id": "20",
-      "name": "Women's Fitness Tracker",
-      "description": "Smart fitness tracker to monitor heart rate, steps, and calories burned.",
-      "price": 4499.99,
-      "count": 30,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:49:00Z",
-      "isNewArrival": true,
-      "isTopSelling": true,
-      "type": "tracker",
-      "sizes": [],
-      "categoryType": "female"
-    },
-    {
-      "id": "21",
-      "name": "Unisex Gym Towel",
-      "description": "Soft and absorbent towel, perfect for workouts and sports activities.",
-      "price": 399.99,
-      "count": 150,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:50:00Z",
-      "isNewArrival": false,
-      "isTopSelling": false,
-      "type": "towel",
-      "sizes": [],
-      "categoryType": "unisex"
-    },
-    {
-      "id": "22",
-      "name": "Men's Compression Socks",
-      "description": "Breathable compression socks for improved circulation during workouts.",
-      "price": 599.99,
-      "count": 60,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:51:00Z",
-      "isNewArrival": false,
-      "isTopSelling": true,
-      "type": "socks",
-      "sizes": [
-        "M",
-        "L"
-      ],
-      "categoryType": "male"
-    },
-    {
-      "id": "23",
-      "name": "Women's Training Shorts",
-      "description": "Lightweight and flexible shorts designed for gym and outdoor workouts.",
-      "price": 799.99,
-      "count": 40,
-      "category": "Bottoms",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:52:00Z",
-      "isNewArrival": true,
-      "isTopSelling": true,
-      "type": "shorts",
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "categoryType": "female"
-    },
-    {
-      "id": "24",
-      "name": "Men's Hoodie Jacket",
-      "description": "Warm hoodie jacket suitable for jogging and casual wear.",
-      "price": 1599.99,
-      "count": 20,
-      "category": "Outerwear",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:53:00Z",
-      "isNewArrival": true,
-      "isTopSelling": true,
-      "type": "hoodie",
-      "sizes": [
-        "M",
-        "L",
-        "XL"
-      ],
-      "categoryType": "male"
-    },
-    {
-      "id": "25",
-      "name": "Women's Workout Tank",
-      "description": "Breathable tank top for gym or yoga sessions with moisture-wicking fabric.",
-      "price": 699.99,
-      "count": 55,
-      "category": "Tops",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:54:00Z",
-      "isNewArrival": true,
-      "isTopSelling": false,
-      "type": "tanktop",
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "categoryType": "female"
-    },
-    {
-      "id": "26",
-      "name": "Unisex Sports Cap",
-      "description": "Adjustable sports cap for men and women to protect from sun during outdoor activities.",
-      "price": 499.99,
-      "count": 100,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:55:00Z",
-      "isNewArrival": true,
-      "isTopSelling": true,
-      "type": "cap",
-      "sizes": [],
-      "categoryType": "unisex"
-    },
-    {
-      "id": "27",
-      "name": "Men's Jogger Pants",
-      "description": "Slim-fit jogger pants with elastic cuffs for comfort and style during workouts.",
-      "price": 1299.99,
-      "count": 35,
-      "category": "Bottoms",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:56:00Z",
-      "isNewArrival": false,
-      "isTopSelling": true,
-      "type": "joggers",
-      "sizes": [
-        "M",
-        "L",
-        "XL"
-      ],
-      "categoryType": "accessories"
-    },
-    {
-      "id": "28",
-      "name": "Women's Sports Tank Top",
-      "description": "Lightweight, stretchy tank top designed for high-intensity workouts and yoga.",
-      "price": 799.99,
-      "count": 45,
-      "category": "Tops",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:57:00Z",
-      "isNewArrival": true,
-      "isTopSelling": true,
-      "type": "tanktop",
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "categoryType": "accessories"
-    },
-    {
-      "id": "29",
-      "name": "Unisex Gym Duffel",
-      "description": "Stylish duffel bag with multiple compartments for gym, travel, and outdoor use.",
-      "price": 1799.99,
-      "count": 25,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:58:00Z",
-      "isNewArrival": true,
-      "isTopSelling": true,
-      "type": "bag",
-      "sizes": [],
-      "categoryType": "accessories"
-    },
-    {
-      "id": "30",
-      "name": "Women's Gym Gloves",
-      "description": "Protective gloves for weightlifting and strength training with grip support.",
-      "price": 599.99,
-      "count": 50,
-      "category": "Accessories",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0098/8822/files/images-SportT_ShirtGSAthleticBlueGSBlackA2B5V_UDXD_1119_640x.jpg?v=1757584628"
-      ],
-      "is_active": true,
-      "created_at": "2025-10-11T09:59:00Z",
-      "isNewArrival": true,
-      "isTopSelling": false,
-      "type": "gloves",
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "categoryType": "accessories"
+      "category": "men",
+      "rating": 4,
+      "reviews": 1527,
+      "features": [
+        "Physique-enhancing seamless design for comfort",
+        "Seamless lightweight materials ideal for your workouts",
+        "Graphic to the back"
+      ]
     }
   ]
 }

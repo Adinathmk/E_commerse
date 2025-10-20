@@ -24,7 +24,7 @@ export default function CartPage() {
 
   if (cart.length === 0) {
     return (
-      <div className="max-w-md mx-auto text-center py-50 px-4">
+      <div className="max-w-md h-screen mx-auto text-center py-50 px-4">
         <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <ShoppingBag className="w-10 h-10 text-gray-400" />
         </div>

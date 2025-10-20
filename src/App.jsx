@@ -11,6 +11,7 @@ import CartPage from './pages/CartPage';
 import WishlistPage from './pages/WishlistPage';
 import Products from './pages/Products';
 import Home from './pages/Home';
+import ProductDetails from './pages/ProductDetails';
 
 function App() {
   return (
@@ -36,7 +37,8 @@ function App() {
                     {/* Routes with Navbar */}
                     <Route element={<MainLayout />}>
                       <Route path="/" element={<Home/>} />
-                      <Route path="/products/:category?" element={<Products/>}/>
+                      <Route path="/products/:category" element={<Products/>}/>
+                      <Route path="/product/:id" element={<ProductDetails/>}/>
                       <Route path="/cart" element={<CartPage />} />
                       <Route path="/wishlist" element={<WishlistPage />} />
                     </Route>

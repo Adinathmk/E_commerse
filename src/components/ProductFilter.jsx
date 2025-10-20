@@ -18,23 +18,26 @@ export default function ProductFilter({ products = [], onFilter = () => {},setIs
   }, [products]);
   
   // Apply filters
-  const handleApply = () => {
-    let filtered = products.filter(
-      (p) =>
-        (!selectedSize || p.sizes?.includes(selectedSize)) &&
-        p.price >= priceRange[0] &&
-        p.price <= priceRange[1]
-    );
+const handleApply = () => {
+  
+  let filtered = products.filter(
+    (p) =>
+      (!selectedSize || p.sizes?.includes(selectedSize)) &&
+      p.price >= priceRange[0] &&
+      p.price <= priceRange[1]
+  );
+  console.log(selectedSize)
+  
+  if (sortBy === "price-low-high") filtered.sort((a, b) => a.price - b.price);
+  else if (sortBy === "price-high-low") filtered.sort((a, b) => b.price - a.price);
+  else if (sortBy === "newest")
+    filtered.sort((a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0));
+  
+  
 
-    if (sortBy === "price-low-high") filtered.sort((a, b) => a.price - b.price);
-    else if (sortBy === "price-high-low") filtered.sort((a, b) => b.price - a.price);
-    else if (sortBy === "newest")
-      filtered.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-    
-    setIsFilterOpen(false);
-    onFilter(filtered);
-    
-  };
+  onFilter(filtered); // ✅ Apply first
+  setIsFilterOpen(false); // ✅ Then close modal
+};
 
   return (
     <div className="w-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-7 space-y-9">

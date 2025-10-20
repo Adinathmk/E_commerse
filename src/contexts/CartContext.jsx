@@ -91,7 +91,7 @@ export const CartProvider = ({ children }) => {
 
   const removeFromCart = (productId) => {
     if (!currentUser) return;
-    toast.success('Product removed from cart');
+    toast.info('Product removed from cart');
     setCart((prevCart) => {
       const updatedCart = prevCart.filter(item => item.id !== productId);
       debouncedSync(updatedCart);

@@ -39,8 +39,8 @@ export default function WishlistPage() {
 
   if (wishlist.length === 0) {
     return (
-      <div className=" bg-white flex items-center justify-center">
-        <div className="max-w-md mx-auto pt-50 text-center">
+      <div className=" bg-white  h-screen flex items-center justify-center">
+        <div className="max-w-md mx-auto  text-center">
           <div>
             <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
               <Heart className="w-8 h-8 text-gray-900" />
