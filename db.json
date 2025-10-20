@@ -1,48 +1,126 @@
 {
   "users": [
     {
-      "id": "u1",
+      "id": "1",
       "name": "Adinath",
       "email": "adinathmkclt@gmail.com",
       "password": "123456789",
+      "phone": "8592044236",
       "wishlist": [],
-      "cart": []
-    },
-    {
-      "id": "08b0",
-      "name": "Adhi",
-      "email": "adi@gmail.com",
-      "password": "123456789",
-      "role": "user",
-      "cart": [],
-      "wishlist": []
-    },
-    {
-      "id": "4591",
-      "name": "Asdhiu",
-      "email": "asdas@Qbudia.cddsdih",
-      "password": "123456",
-      "role": "user",
-      "cart": [],
-      "wishlist": []
-    },
-    {
-      "id": "4c51",
-      "name": "asasdd",
-      "email": "ASddasug@agdyug.comm",
-      "password": "123456",
-      "role": "user",
-      "cart": [],
-      "wishlist": []
-    },
-    {
-      "id": "b126",
-      "name": "adinath",
-      "email": "adinath@gmail.com",
-      "password": "123456",
-      "role": "user",
-      "cart": [],
-      "wishlist": []
+      "cart": [
+        {
+          "id": "1",
+          "name": "Geo Seamless T-Shirt",
+          "description": "Geo Seamless’s high-stretch designs, breathable fabrics and flattering slim fits keep your movements unrestricted and your mind undistracted. PSA: also makes your arms look huge.",
+          "price": 999.99,
+          "prevPrice": 1099.99,
+          "count": 50,
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/images-GeoSeamlessT_ShirtGSCementBrownGSSoulBrownA5A2D_NC8V_0261_V1a_1920x.jpg?v=1759149115",
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/images-GeoSeamlessT_ShirtGSCementBrownGSSoulBrownA5A2D_NC8V_0267_V1a_1920x.jpg?v=1759149115",
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/images-GeoSeamlessT_ShirtGSCementBrownGSSoulBrownA5A2D_NC8V_0276_V1a_1920x.jpg?v=1759149115",
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/images-GeoSeamlessT_ShirtGSCementBrownGSSoulBrownA5A2D_NC8V_0264_V1a_1920x.jpg?v=1759149115"
+          ],
+          "is_active": true,
+          "created_at": "2025-10-11T09:30:00Z",
+          "isNewArrival": true,
+          "isTopSelling": false,
+          "type": "T Shirt",
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ],
+          "category": "men",
+          "rating": 4,
+          "reviews": 1547,
+          "features": [
+            "Flattering slim fit & shoulder-accentuating raglan sleeves for a subtle nod to the physique you’ve worked for",
+            "Stay fully focused with lightweight material & a comfortable seamless design ",
+            "Breathable mesh & sweat-wicking tech keep you cool & dry ",
+            "Subtle jacquard camo pattern"
+          ],
+          "quantity": 1,
+          "addedAt": "2025-10-20T14:33:47.969Z"
+        },
+        {
+          "id": "2",
+          "name": "Lightweight Seamless T-Shirt",
+          "description": "Versatile fits & authentic conditioning graphics. Step up your staples with our graphic styles.",
+          "price": 900,
+          "prevPrice": 1000,
+          "count": 50,
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/images-LightweightRegSeamlessT_ShirtBlackSilhouetteGreyA2C7M_BBMW_6396_1920x.jpg?v=1752701861",
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/images-LightweightRegSeamlessT_ShirtBlackSilhouetteGreyA2C7M_BBMW_6405_1920x.jpg?v=1752701861",
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/images-LightweightRegSeamlessT_ShirtBlackSilhouetteGreyA2C7M_BBMW_6409_1920x.jpg?v=1752701861",
+            "https://cdn.shopify.com/s/files/1/0156/6146/files/images-LightweightRegSeamlessT_ShirtBlackSilhouetteGreyA2C7M_BBMW_6417_1920x.jpg?v=1752701861"
+          ],
+          "is_active": true,
+          "created_at": "2025-10-11T09:30:00Z",
+          "isNewArrival": true,
+          "isTopSelling": true,
+          "type": "T Shirt",
+          "sizes": [
+            "S",
+            "L",
+            "XL"
+          ],
+          "category": "men",
+          "rating": 4,
+          "reviews": 1527,
+          "features": [
+            "Physique-enhancing seamless design for comfort",
+            "Seamless lightweight materials ideal for your workouts",
+            "Graphic to the back"
+          ],
+          "quantity": 1,
+          "addedAt": "2025-10-20T15:47:57.355Z"
+        }
+      ],
+      "orders": [
+        {
+          "orderId": "ORD-mgzbgr7a-HBFAE",
+          "items": [
+            {
+              "id": "1",
+              "name": "Geo Seamless T-Shirt",
+              "quantity": 1,
+              "price": 999.99,
+              "gst": "180.00",
+              "total": "1179.99"
+            },
+            {
+              "id": "2",
+              "name": "Lightweight Seamless T-Shirt",
+              "quantity": 1,
+              "price": 900,
+              "gst": "162.00",
+              "total": "1062.00"
+            }
+          ],
+          "totalAmount": "2645.55",
+          "date": "2025-10-20T15:55:01.174Z",
+          "status": "Pending"
+        },
+        {
+          "orderId": "ORD-mgzbwjqd-KM4I1",
+          "items": [
+            {
+              "id": "2",
+              "name": "Lightweight Seamless T-Shirt",
+              "quantity": 1,
+              "price": 900,
+              "gst": "162.00",
+              "total": "1062.00"
+            }
+          ],
+          "totalAmount": "1253.16",
+          "date": "2025-10-20T16:07:17.989Z",
+          "status": "Pending"
+        }
+      ]
     }
   ],
   "products": [
@@ -51,7 +129,7 @@
       "name": "Geo Seamless T-Shirt",
       "description": "Geo Seamless’s high-stretch designs, breathable fabrics and flattering slim fits keep your movements unrestricted and your mind undistracted. PSA: also makes your arms look huge.",
       "price": 999.99,
-      "discountPrice": 899.99,
+      "prevPrice": 1099.99,
       "count": 50,
       "images": [
         "https://cdn.shopify.com/s/files/1/0156/6146/files/images-GeoSeamlessT_ShirtGSCementBrownGSSoulBrownA5A2D_NC8V_0261_V1a_1920x.jpg?v=1759149115",
@@ -84,8 +162,8 @@
       "id": "2",
       "name": "Lightweight Seamless T-Shirt",
       "description": "Versatile fits & authentic conditioning graphics. Step up your staples with our graphic styles.",
-      "price": 1100,
-      "discountPrice": 1000,
+      "price": 900,
+      "prevPrice": 1000,
       "count": 50,
       "images": [
         "https://cdn.shopify.com/s/files/1/0156/6146/files/images-LightweightRegSeamlessT_ShirtBlackSilhouetteGreyA2C7M_BBMW_6396_1920x.jpg?v=1752701861",
@@ -110,6 +188,39 @@
         "Physique-enhancing seamless design for comfort",
         "Seamless lightweight materials ideal for your workouts",
         "Graphic to the back"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Geo Seamless T-Shirt",
+      "description": "Get freedom 'til the finish in Geo Seamless. Sweat-wicking tech and breathable mesh structures keep you cool and dry. Lightweight material and minimal seams ensure zero distractions for maximum focus. And raglan sleeves accentuate your shoulders for a subtle nod to the physique you’ve worked for. It’s time to release your movement and reimagine your capabilities. You ready?",
+      "price": 800,
+      "prevPrice": 900,
+      "count": 50,
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/GeoSeamlessT-ShirtBlackCharcoalGreyA5A2D-BBF9-1838_A-Edit_42ac3599-544f-4ffe-ba22-06a37987225b_1920x.jpg?v=1754992733",
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/GeoSeamlessT-ShirtBlack-CharcoalGreyA5A2D-BBF9-0032-Edit_e785c9ac-7b01-4509-aeb8-66341a6764e1_1920x.jpg?v=1754992733",
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/GeoSeamlessT-ShirtBlack-CharcoalGreyA5A2D-BBF9-0030-Edit_f64d6d4a-ca06-48af-b3ef-d832820f12f3_1920x.jpg?v=1754992733",
+        "https://cdn.shopify.com/s/files/1/0156/6146/files/GeoSeamlessT-ShirtBlack-CharcoalGreyA5A2D-BBF9-0064-Edit_1b5d0c0c-71c8-459d-a502-cbd7bf566dc0_1920x.jpg?v=1754992733"
+      ],
+      "is_active": true,
+      "created_at": "2024-10-11T09:30:00Z",
+      "isNewArrival": false,
+      "isTopSelling": false,
+      "type": "T Shirt",
+      "sizes": [
+        "S",
+        "L"
+      ],
+      "category": "men",
+      "rating": 4,
+      "reviews": 1227,
+      "features": [
+        "Slim fit",
+        "All-over mesh structures",
+        "Lightweight material",
+        "Jacquard camo pattern",
+        "Sweat-wicking"
       ]
     }
   ]

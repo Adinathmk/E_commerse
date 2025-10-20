@@ -44,11 +44,7 @@ export default function Navbar() {
     else setIsProfileModalOpen(!isProfileModalOpen);
   };
 
-  const handleMyOrders = () => {
-    setIsProfileModalOpen(false);
-    navigate('/orders');
-  };
-
+  
   const handleProfile = () => {
     setIsProfileModalOpen(false);
     navigate('/profile');
@@ -151,9 +147,6 @@ export default function Navbar() {
                         <button onClick={handleProfile} className="w-full flex items-center space-x-3 px-4 py-3 text-left text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
                           <UserIcon size={18} className="text-gray-500" /> <span className="font-medium">Profile</span>
                         </button>
-                        <button onClick={handleMyOrders} className="w-full flex items-center space-x-3 px-4 py-3 text-left text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200">
-                          <Package size={18} className="text-gray-500" /> <span className="font-medium">My Orders</span>
-                        </button>
                         <div className="border-t border-gray-100 my-1"></div>
                         <button onClick={handleSignOut} className="w-full flex items-center space-x-3 px-4 py-3 text-left text-red-600 hover:bg-red-50 transition-colors duration-200">
                           <LogOut size={18} /> <span className="font-medium">Sign Out</span>
@@ -237,9 +230,6 @@ export default function Navbar() {
                   </div>
                   <button onClick={() => { setIsMenuOpen(false); navigate('/profile'); }} className="w-full flex items-center space-x-3 px-5 py-4 rounded-2xl text-base font-medium text-gray-700 shadow-sm border border-gray-100 hover:text-purple-600 hover:border-purple-200">
                     <UserIcon size={20} /> <span>Profile</span>
-                  </button>
-                  <button onClick={() => { setIsMenuOpen(false); navigate('/orders'); }} className="w-full flex items-center space-x-3 px-5 py-4 rounded-2xl text-base font-medium text-gray-700 shadow-sm border border-gray-100 hover:text-purple-600 hover:border-purple-200">
-                    <Package size={20} /> <span>My Orders</span>
                   </button>
                   <button onClick={() => { setIsMenuOpen(false); handleSignOut(); }} className="w-full flex items-center space-x-3 px-5 py-4 rounded-2xl text-base font-medium text-red-600 shadow-sm border border-gray-100 hover:bg-red-50 hover:border-red-200">
                     <LogOut size={20} /> <span>Sign Out</span>

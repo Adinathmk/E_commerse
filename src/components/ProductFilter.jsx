@@ -26,7 +26,7 @@ const handleApply = () => {
       p.price >= priceRange[0] &&
       p.price <= priceRange[1]
   );
-  console.log(selectedSize)
+ 
   
   if (sortBy === "price-low-high") filtered.sort((a, b) => a.price - b.price);
   else if (sortBy === "price-high-low") filtered.sort((a, b) => b.price - a.price);

@@ -2,8 +2,11 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 import { Minus, Plus, Trash2, ShoppingBag, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import CheckoutModal from '../components/BuyingModal';
 
 export default function CartPage() {
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const navigate = useNavigate()
   const { 
     cart, 
@@ -46,6 +49,12 @@ export default function CartPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
+      <CheckoutModal
+        isOpen={isCheckoutOpen}
+        onClose={() => setIsCheckoutOpen(false)}
+        cartItems={cart}
+        totalAmount={total}
+      />  
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Shopping Cart</h1>
@@ -159,7 +168,9 @@ export default function CartPage() {
               <p className="text-sm text-gray-500 mt-2">Inclusive of all taxes</p>
             </div>
 
-            <button className="w-full bg-black text-white py-2 px-5 rounded-xl hover:bg-gray-800 transition-colors font-semibold flex items-center justify-center gap-2 cursor-pointer">
+            <button className="w-full bg-black text-white py-2 px-5 rounded-xl hover:bg-gray-800 transition-colors font-semibold flex items-center justify-center gap-2 cursor-pointer"
+             onClick={() => setIsCheckoutOpen(true)}
+             >
               Proceed to Checkout
               <ArrowRight className="w-5 h-5" />
             </button>

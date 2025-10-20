@@ -5,6 +5,7 @@ import { useWishlist } from '../contexts/WishlistContext';
 import { useCart } from '../contexts/CartContext';
 import axiosInstance from '../api/axiosInstance';
 import { toast } from 'react-toastify';
+import CheckoutModal from '../components/BuyingModal';
 
 const ProductDetails = () => {
   const navigate = useNavigate();
@@ -16,12 +17,12 @@ const ProductDetails = () => {
   const [activeImage, setActiveImage] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [product,SetProduct]=useState({})
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
  useEffect(() => {
   const fetchProduct = async () => {
     try {
       const { data } = await axiosInstance.get(`/products?id=${id}`);
-      console.log(data)
       SetProduct(data[0]);
     } catch (err) {
       console.error("Error fetching product:", err);
@@ -64,7 +65,7 @@ const ProductDetails = () => {
         toast.info('Select size before buying');
         return;
     }
-    navigate('/checkout');
+    setIsCheckoutOpen(true)
   };
 
   const getButtonText = () => {
@@ -90,8 +91,15 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">   
+     <CheckoutModal
+        isOpen={isCheckoutOpen}
+        onClose={() => setIsCheckoutOpen(false)}
+        cartItems={[{...product,quantity:quantity}]}
+        totalAmount={((product.price * quantity)+((product.price * quantity)* 0.18))}
+      />  
       
+
       {/* Product Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
@@ -207,15 +215,15 @@ const ProductDetails = () => {
               {/* Price */}
               <div className="flex items-center space-x-4">
                 <span className="text-3xl font-light text-gray-900">
-                  ₹{product.discountPrice.toLocaleString()}
+                  ₹{product.price.toLocaleString()}
                 </span>
-                {product.price > product.discountPrice && (
+                {product.price >= product.price && (
                   <>
                     <span className="text-xl text-gray-500 line-through font-light">
-                      ₹{product.price.toLocaleString()}
+                      ₹{product.prevPrice.toLocaleString()}
                     </span>
                     <span className="text-sm bg-green-100 text-green-700 px-2 py-1 rounded font-light">
-                      Save ₹{(product.price - product.discountPrice).toLocaleString()}
+                      Save ₹{(product.prevPrice - product.price).toLocaleString()}
                     </span>
                   </>
                 )}
@@ -285,7 +293,7 @@ const ProductDetails = () => {
                   </button>
                 </div>
                 <button 
-                onClick={handleBuyNowClick}
+                onClick={() =>handleBuyNowClick() }
                 className="w-full py-4 px-8 bg-gray-900 text-white hover:bg-gray-800 transition-colors font-light rounded-lg flex items-center justify-center gap-3"
               >
                 <Truck className="w-5 h-5" />
