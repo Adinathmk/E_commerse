@@ -16,7 +16,7 @@ const MinimalWhiteFooter = () => {
           
           {/* Brand */}
           <div className="md:col-span-1">
-            <h3 className="text-xl font-light text-gray-900 mb-4 tracking-tight">GYM SHARK</h3>
+            <h3 className="text-xl font-light text-gray-900 mb-4 tracking-tight">Active Core</h3>
             <p className="text-gray-500 text-sm leading-relaxed">
               Fit for Performance, Made for You
             </p>
@@ -71,7 +71,7 @@ const MinimalWhiteFooter = () => {
         {/* Bottom */}
         <div className="border-t border-gray-100 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-xs mb-4 md:mb-0">
-            © 2025 GYMSHARK. Crafted with care.
+            © 2025 Active Core. Crafted with care.
           </div>
           <div className="flex items-center space-x-2">
             {[FaCcVisa, FaCcMastercard, FaCcPaypal, FaApplePay].map((Icon, index) => (

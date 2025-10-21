@@ -73,7 +73,7 @@ export default function Navbar() {
 
           {/* Left - Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-gray-900 tracking-tight cursor-pointer">GYM SHARK</Link>
+            <Link to="/" className="text-2xl font-bold text-gray-900 tracking-tight cursor-pointer">Active Core</Link>
           </div>
 
           {/* Center - Categories */}
@@ -140,7 +140,7 @@ export default function Navbar() {
                         <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm">{getUserInitials()}</div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-semibold text-gray-900 truncate">Hello, {getUserDisplayName()}!</p>
-                          <p className="text-xs text-gray-500 truncate mt-1">Welcome to GYM SHARK</p>
+                          <p className="text-xs text-gray-500 truncate mt-1">Welcome to Active Core</p>
                         </div>
                       </div>
                       <div className="py-2">
@@ -175,7 +175,7 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="lg:hidden fixed inset-0 bg-white z-50 animate-in slide-in-from-right duration-300 overflow-y-auto">
           <div className="flex items-center justify-between p-6 border-b border-gray-200">
-            <Link to="/" className="text-2xl font-bold text-gray-900 tracking-tight cursor-pointer">GYM SHARK</Link>
+            <Link to="/" className="text-2xl font-bold text-gray-900 tracking-tight cursor-pointer">Active Core</Link>
             <button onClick={() => setIsMenuOpen(false)} className="cursor-pointer text-gray-600 hover:text-gray-800 transition-colors p-2">
               <X size={28} />
             </button>
@@ -225,7 +225,7 @@ export default function Navbar() {
                     <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm">{getUserInitials()}</div>
                     <div>
                       <p className="text-sm font-semibold text-gray-900">Hello, {getUserDisplayName()}!</p>
-                      <p className="text-xs text-gray-500 mt-1">Welcome to GYM SHARK</p>
+                      <p className="text-xs text-gray-500 mt-1">Welcome to Active Core</p>
                     </div>
                   </div>
                   <button onClick={() => { setIsMenuOpen(false); navigate('/profile'); }} className="w-full flex items-center space-x-3 px-5 py-4 rounded-2xl text-base font-medium text-gray-700 shadow-sm border border-gray-100 hover:text-purple-600 hover:border-purple-200">
