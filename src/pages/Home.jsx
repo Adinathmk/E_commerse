@@ -13,31 +13,24 @@ function Home() {
   const navigate=useNavigate();
   const featuredProducts = [
     {
-      id: 1,
+      id: 2,
       image1: "https://cdn.shopify.com/s/files/1/0156/6146/files/GeoSeamlessT-ShirtBlackCharcoalGreyA5A2D-BBF9-1838_A-Edit_42ac3599-544f-4ffe-ba22-06a37987225b_1920x.jpg?v=1754992733",
       image2: "https://cdn.shopify.com/s/files/1/0156/6146/files/GeoSeamlessT-ShirtBlack-CharcoalGreyA5A2D-BBF9-0032-Edit_e785c9ac-7b01-4509-aeb8-66341a6764e1_1920x.jpg?v=1754992733",
     },
     {
-      id: 1,
-      image1: "https://cdn.shopify.com/s/files/1/0156/6146/files/images-BorgStatementJacketGSBlackGSGraphiteGreyGSOatWhiteB4B5Z_BDB9_1562_V1_1920x.jpg?v=1759505053",
-      image2: "https://cdn.shopify.com/s/files/1/0156/6146/files/images-BorgStatementJacketGSBlackGSGraphiteGreyGSOatWhiteB4B5Z_BDB9_1548_V1_1920x.jpg?v=1759505053",
+      id: 31,
+      image1: "https://cdn.shopify.com/s/files/1/0156/6146/files/EVERYDAYSEAMLESSLONGSLEEVECROPTOPBlackB7A2S-BB2J-2677_1920x.jpg?v=1714127923",
+      image2: "https://cdn.shopify.com/s/files/1/0156/6146/files/EVERYDAYSEAMLESSLONGSLEEVECROPTOPBlackB7A2S-BB2J-2706_1920x.jpg?v=1714127921",
     },
     {
-      id: 1,
+      id: 16,
       image1: "https://cdn.shopify.com/s/files/1/0156/6146/products/A1A2T-UBCYArrivalSlimTankNavy.D1_ZH_ZH_87c78d47-7c22-4cd7-a24e-694e1e0f55b3_1920x.jpg?v=1652263236",
       image2: "https://cdn.shopify.com/s/files/1/0156/6146/products/A1A2T-UBCYArrivalSlimTankNavy.C_ZH_ZH_c9d296cb-6449-4007-8ce6-84cf6bb1cf19_1920x.jpg?v=1652263236",
     },{
-      id: 1,
-      image1: "https://cdn.shopify.com/s/files/1/0156/6146/files/images-GymsharkxAnalisSeamlessLSCropTopB4B4LGSMidnightBlueGSLatsBlueB4B4L_UCXG_0930_1920x.jpg?v=1757511772",
-      image2: "https://cdn.shopify.com/s/files/1/0156/6146/files/images-GymsharkxAnalisSeamlessLSCropTopB4B4LGSMidnightBlueGSLatsBlueB4B4L_UCXG_0951_1920x.jpg?v=1757511772",
+      id: 34,
+      image1: "https://cdn.shopify.com/s/files/1/0156/6146/files/EverydaySeamlessLongSleeveCropTopGSNavyB7A2S-UB9P-0876_1920x.jpg?v=1690799792",
+      image2: "https://cdn.shopify.com/s/files/1/0156/6146/files/EverydaySeamlessLongSleeveCropTopGSNavyB7A2S-UB9P-0897_1920x.jpg?v=1690799792",
     }
-  ];
-
-  const categories = [
-    { name: "Electronics", image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=300", items: "128 products" },
-    { name: "Fashion", image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=300", items: "256 products" },
-    { name: "Home & Living", image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300", items: "89 products" },
-    { name: "Accessories", image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=300", items: "167 products" }
   ];
 
   const testimonials = [
@@ -197,8 +190,8 @@ function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredProducts.map((product) => (
-              <div key={product.id} className="group cursor-pointer">
-                <div className="relative overflow-hidden bg-gray-100 mb-4 shadow-xl">
+              <div key={product.id} onClick={()=>{navigate(`/product/${product.id}`)}} className="group cursor-pointer" >
+                <div className="relative overflow-hidden bg-gray-100 mb-4 shadow-xl ">
                   <img
                     src={product.image1}                    
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:opacity-0"

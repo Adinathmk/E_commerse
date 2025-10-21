@@ -19,8 +19,7 @@ const CheckoutModal = ({ isOpen, onClose, cartItems, totalAmount }) => {
     cardNumber: '',
     cardName: '',
     expiryDate: '',
-    cvv: '',
-    saveCard: false,
+    cvv: ''
   });
 
   const [errors, setErrors] = useState({});
@@ -28,10 +27,10 @@ const CheckoutModal = ({ isOpen, onClose, cartItems, totalAmount }) => {
   if (!isOpen) return null;
 
   const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value} = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: value,
     }));
   };
 

@@ -39,25 +39,39 @@ export default function WishlistPage() {
 
   if (wishlist.length === 0) {
     return (
-      <div className=" bg-white  h-screen flex items-center justify-center">
-        <div className="max-w-md mx-auto  text-center">
-          <div>
-            <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Heart className="w-8 h-8 text-gray-900" />
-            </div>
-            <h1 className="text-2xl font-semibold text-gray-900 mb-3">Your Wishlist is Empty</h1>
-            <p className="text-gray-500 mb-8 leading-relaxed">
-              Save your favorite items here to keep track of what you love.
-            </p>
-            <Link
-              to="/products/men"
-              className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-xl hover:bg-gray-800 transition-colors font-medium"
-            >
-              <ShoppingBag className="w-5 h-5" />
-              Start Shopping
-            </Link>
-          </div>
+      // <div className=" bg-white  h-screen flex items-center justify-center">
+      //   <div className="max-w-md mx-auto  text-center">
+      //     <div>
+      //       <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
+      //         <Heart className="w-8 h-8 text-gray-900" />
+      //       </div>
+      //       <h1 className="text-2xl font-semibold text-gray-900 mb-3">Your Wishlist is Empty</h1>
+      //       <p className="text-gray-500 mb-8 leading-relaxed">
+      //         Save your favorite items here to keep track of what you love.
+      //       </p>
+      //       <Link
+      //         to="/products/men"
+      //         className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-xl hover:bg-gray-800 transition-colors font-medium"
+      //       >
+      //         <ShoppingBag className="w-5 h-5" />
+      //         Start Shopping
+      //       </Link>
+      //     </div>
+      //   </div>
+      // </div>
+      <div className="max-w-md h-screen mx-auto text-center py-50 px-4">
+        <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <Heart className="w-8 h-8 text-gray-900" />
         </div>
+        <h2 className="text-2xl font-semibold text-gray-900 mb-2">Your Wishlist is Empty</h2>
+        <p className="text-gray-500 mb-8"> Save your favorite items here to keep track of what you love.</p>
+        <Link
+          to="/products/men"
+          className=" bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium inline-block text-center"
+        >
+    
+              Start Shopping
+      </Link>
       </div>
     );
   }

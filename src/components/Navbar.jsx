@@ -17,16 +17,23 @@ export default function Navbar() {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const profileModalRef = useRef(null);
+  const searchModalRef = useRef(null); // Add this ref for search modal
   const navigate = useNavigate();
 
   const activeClass = "text-purple-600 font-medium";
   const inactiveClass = "text-gray-700 font-medium";
 
-  // Close profile modal when clicking outside
+  // Close modals when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // Close profile modal
       if (profileModalRef.current && !profileModalRef.current.contains(event.target)) {
         setIsProfileModalOpen(false);
+      }
+      
+      // Close search modal (desktop)
+      if (searchModalRef.current && !searchModalRef.current.contains(event.target)) {
+        setIsSearchOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -44,7 +51,6 @@ export default function Navbar() {
     else setIsProfileModalOpen(!isProfileModalOpen);
   };
 
-  
   const handleProfile = () => {
     setIsProfileModalOpen(false);
     navigate('/profile');
@@ -89,7 +95,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
 
             {/* Desktop Search */}
-            <div className="hidden lg:block relative">
+            <div className="hidden lg:block relative" ref={searchModalRef}> {/* Add ref here */}
               <div className={`flex items-center bg-gray-50 border border-gray-200 rounded-xl pl-3 pr-2 py-2 overflow-hidden transition-all duration-300 ease-in-out ${isSearchOpen ? 'w-64 shadow-md' : 'w-10 hover:bg-gray-100'}`}>
                 <Search
                   className="text-gray-500 flex-shrink-0 cursor-pointer transition-transform duration-300"
@@ -113,6 +119,7 @@ export default function Navbar() {
               </div>
             </div>
 
+            {/* Rest of the code remains exactly the same */}
             {/* Wishlist */}
             <button onClick={() => navigate('/wishlist')} className="cursor-pointer text-gray-600 hover:text-purple-600 transition-all duration-300 p-2 hover:bg-purple-50 rounded-lg relative group">
               <Heart size={22} className="group-hover:scale-110 transition-transform" />
@@ -171,7 +178,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Everything remains exactly the same */}
       {isMenuOpen && (
         <div className="lg:hidden fixed inset-0 bg-white z-50 animate-in slide-in-from-right duration-300 overflow-y-auto">
           <div className="flex items-center justify-between p-6 border-b border-gray-200">

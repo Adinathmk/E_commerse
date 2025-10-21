@@ -13,6 +13,8 @@ import Products from './pages/Products';
 import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
 import UserProfile from './pages/Profile';
+import ScrollToTop from './components/ScrollToTop';
+import ProtectLogin from './layouts/ProtectLogin';
 
 function App() {
   return (
@@ -21,30 +23,31 @@ function App() {
         <CartProvider>
          <WishlistProvider>        
             <ToastContainer
-            position="top-right"
-            autoClose={3000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
+              position="top-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+            <ScrollToTop/>
             <Routes>
-                    {/* Routes without Navbar */}
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<SignUp />} />
-                    {/* Routes with Navbar */}
-                    <Route element={<MainLayout />}>
-                      <Route path="/" element={<Home/>} />
-                      <Route path="/products/:category" element={<Products/>}/>
-                      <Route path="/product/:id" element={<ProductDetails/>}/>
-                      <Route path="/cart" element={<CartPage />} />
-                      <Route path="/wishlist" element={<WishlistPage />} />
-                      <Route path="/profile" element={<UserProfile/>} />
-
-                    </Route>
+                <Route element={<ProtectLogin/>}>
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/signup" element={<SignUp />} />                  
+                </Route>
+                <Route element={<MainLayout />}>
+                  <Route path="/" element={<Home/>} />
+                  <Route path="/products/:category" element={<Products/>}/>
+                  <Route path="/product/:id" element={<ProductDetails/>}/>
+                  <Route path="/cart" element={<CartPage />} />
+                  <Route path="/wishlist" element={<WishlistPage />} />
+                  <Route path="/profile" element={<UserProfile/>} />
+                  <Route path="/profile" element={<UserProfile/>} />
+                </Route>
             </Routes>
           </WishlistProvider>
           </CartProvider>

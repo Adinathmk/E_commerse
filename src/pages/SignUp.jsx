@@ -55,8 +55,10 @@ const SignUpPage = () => {
       email: formData.email,
       password: formData.password,
       role:'user',
+      phone:'',
       cart:[],
-      wishlist:[]
+      wishlist:[],
+      orders:[]
     });
     setLoading(false);
 
