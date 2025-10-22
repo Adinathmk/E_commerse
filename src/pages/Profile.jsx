@@ -211,7 +211,7 @@ const UserProfile = () => {
 
               <div className="space-y-4">
                 {userData.orders?.length > 0 ? (
-                  userData.orders.map((order) => (
+                  [...userData.orders].reverse().map((order) => (
                     <div
                       key={order.orderId}
                       className="flex items-center justify-between p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-all duration-200"
@@ -228,7 +228,7 @@ const UserProfile = () => {
                             Placed on {new Date(order.date).toISOString().split("T")[0]}
                           </p>
                         </div>
-                      </div>
+                      </div>  
                       <div className="text-right">
                         <p className="font-semibold text-gray-900">
                           ₹{order.totalAmount}

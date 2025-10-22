@@ -43,7 +43,7 @@ const SignInPage = () => {
       toast.success(`Logged in as ${response.data.name || response.data.email}`);
       setFormData({ email: "", password: "" });
       // Navigate to dashboard or home page after login
-      navigate("/"); 
+      navigate("/",{ replace: true }); 
     } else {
       toast.error(` ${response.message}`);
     }

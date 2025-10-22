@@ -90,7 +90,7 @@ function Home() {
             Elevate Your Style
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
-            Discover premium quality products crafted with attention to detail and timeless design.
+           Discover high-quality workout wear designed for comfort, strength, and style.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold cursor-pointer hover:bg-gray-100 transition-colors flex items-center justify-center"
